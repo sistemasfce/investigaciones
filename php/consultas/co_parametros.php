@@ -2,6 +2,7 @@
  
 class co_parametros
 {
+    // listado de ubicaciones
     function get_ubicaciones($where='1=1')
     {
         $sql = "SELECT *
