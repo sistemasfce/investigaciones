@@ -1,0 +1,5 @@
+# Ignorar todos los ficheros...
+www/temp/
+metadatos_compilados/
+# ...excepto el fichero .gitignore
+!.gitignore
