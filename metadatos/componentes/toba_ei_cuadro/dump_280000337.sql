@@ -95,7 +95,7 @@ INSERT INTO apex_objeto_cuadro_cc (objeto_cuadro_proyecto, objeto_cuadro, objeto
 	'280000337', --objeto_cuadro
 	'280000025', --objeto_cuadro_cc
 	'titulo', --identificador
-	'Proyecto', --descripcion
+	'Nombre', --descripcion
 	'1', --orden
 	'titulo', --columnas_id
 	'titulo', --columnas_descripcion
