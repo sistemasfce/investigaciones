@@ -29,6 +29,7 @@ class co_proyectos
 			(SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
 				AND investigadores_categorias.investigador = investigadores.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc,
 			proyectos.titulo,
+			proyectos.denominacion || ': ' || proyectos.titulo as titulo_desc,
 			roles.descripcion as rol_desc
 		FROM investigadores_en_proyectos 
 			LEFT OUTER JOIN investigadores ON (investigadores_en_proyectos.investigador = investigadores.investigador)
@@ -44,6 +45,7 @@ UNION
             (SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
                 AND investigadores_categorias.investigador = dir.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc,
             proyectos.titulo,
+	proyectos.denominacion || ': ' || proyectos.titulo as titulo_desc,
             'DIRECTOR' as rol_desc
         FROM proyectos 
             LEFT OUTER JOIN investigadores as dir ON (proyectos.director = dir.investigador)	            
@@ -57,6 +59,7 @@ UNION
             (SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
                 AND investigadores_categorias.investigador = codir.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc,
             proyectos.titulo,
+	proyectos.denominacion || ': ' || proyectos.titulo as titulo_desc,
             'CODIRECTOR' as rol_desc
         FROM proyectos 
             LEFT OUTER JOIN investigadores as codir ON (proyectos.codirector = codir.investigador)	            

@@ -175,23 +175,23 @@ class ci_proyectos extends investigaciones_ci
 
 	function evt__agregar()
 	{
-		$this->set_pantalla('edicion');
+            $this->set_pantalla('edicion');
 	}
 
 	function evt__cancelar()
 	{
-		$this->dep('relacion')->resetear();
-		$this->set_pantalla('seleccion');
+            $this->dep('relacion')->resetear();
+            $this->set_pantalla('seleccion');
 	}
 
 	function evt__eliminar()
 	{
-		try {
-			$this->dep('relacion')->eliminar_todo();
-			$this->set_pantalla('seleccion');
-		} catch (toba_error $e) {
-			toba::notificacion()->agregar('No es posible eliminar el registro.');
-		}
+            try {
+                    $this->dep('relacion')->eliminar_todo();
+                    $this->set_pantalla('seleccion');
+            } catch (toba_error $e) {
+                    toba::notificacion()->agregar('No es posible eliminar el registro.');
+            }
 	}
 
 	function evt__guardar()

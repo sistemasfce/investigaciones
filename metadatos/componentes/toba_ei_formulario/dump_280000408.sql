@@ -201,41 +201,9 @@ INSERT INTO apex_objeto_ut_formulario (objeto_ut_formulario_proyecto, objeto_ut_
 				&nbsp;</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="text-align: center;">
-				<span style="font-size:14px;"><strong style="font-size: 14px;">Prorroga</strong></span></td>
-		</tr>
-		<tr>
-			<td colspan="2" style="text-align: center;">
-				&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				<span style="font-size:12px;">[ef id=prorroga_desde]</span></td>
-			<td>
-				<span style="font-size:12px;">[ef id=prorroga_hasta]</span></td>
-		</tr>
-		<tr>
-			<td>
-				<span style="font-size:12px;">[ef id=prorroga_resol_cs]</span></td>
-			<td>
-				<span style="font-size:12px;">[ef id=prorroga_resol_cs_fecha]</span></td>
-		</tr>
-		<tr>
-			<td>
-				<span style="font-size:12px;">[ef id=prorroga_resol_rector]</span></td>
-			<td>
-				<span style="font-size:12px;">[ef id=prorroga_resol_rector_fecha]</span></td>
-		</tr>
-		<tr>
-			<td>
-				<span style="font-size:12px;">[ef id=prorroga]</span></td>
 			<td>
 				&nbsp;</td>
-		</tr>
-		<tr>
-			<td style="text-align: center;">
-				&nbsp;</td>
-			<td style="text-align: center;">
+			<td>
 				&nbsp;</td>
 		</tr>
 		<tr>
@@ -290,6 +258,44 @@ INSERT INTO apex_objeto_ut_formulario (objeto_ut_formulario_proyecto, objeto_ut_
 			<td>
 				&nbsp;</td>
 			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;">
+				<span style="font-size:14px;"><strong style="font-size: 14px;">Prorroga</strong></span></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center;">
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+				<span style="font-size:12px;">[ef id=prorroga_desde]</span></td>
+			<td>
+				<span style="font-size:12px;">[ef id=prorroga_hasta]</span></td>
+		</tr>
+		<tr>
+			<td>
+				<span style="font-size:12px;">[ef id=prorroga_resol_cs]</span></td>
+			<td>
+				<span style="font-size:12px;">[ef id=prorroga_resol_cs_fecha]</span></td>
+		</tr>
+		<tr>
+			<td>
+				<span style="font-size:12px;">[ef id=prorroga_resol_rector]</span></td>
+			<td>
+				<span style="font-size:12px;">[ef id=prorroga_resol_rector_fecha]</span></td>
+		</tr>
+		<tr>
+			<td>
+				<span style="font-size:12px;">[ef id=prorroga]</span></td>
+			<td>
+				&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">
+				&nbsp;</td>
+			<td style="text-align: center;">
 				&nbsp;</td>
 		</tr>
 		<tr>

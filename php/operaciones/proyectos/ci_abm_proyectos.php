@@ -129,14 +129,45 @@ class ci_abm_proyectos extends investigaciones_ci
 	function conf__form_ml_eval(investigaciones_ei_formulario_ml $form_ml)
 	{
 		if ($this->relacion()->esta_cargada()) {
-			$datos = $this->tabla('evaluadores_en_proyectos')->get_filas();
-			$form_ml->set_datos($datos);
+			$datos_fila = $this->tabla('evaluadores_en_proyectos')->get_filas();
+			$aux = array();
+			foreach ($datos_fila as $datos) {
+					// el 23 es para que corte la cadena despues del caracter 19, de /home/fce/informes_inv/
+					$nombre = substr($datos['evaluacion_path'],23);
+					$dir_tmp = toba::proyecto()->get_www_temp();
+					exec("cp '". $datos['evaluacion_path']. "' '" .$dir_tmp['path']."/".$nombre."'");
+					$temp_archivo = toba::proyecto()->get_www_temp($nombre);
+					$tamanio = round(filesize($temp_archivo['path']) / 1024);
+					$datos['evaluacion_path_v'] = "<a href='{$temp_archivo['url']}'target='_blank'>Descargar archivo</a>";
+					$datos['evaluacion_archivo'] = $nombre. ' - Tam.: '.$tamanio. ' KB';   
+				$aux[] = $datos;
+			}
+			$form_ml->set_datos($aux);
 		}
 	}
 
 	function evt__form_ml_eval__modificacion($datos)
 	{
-		$this->tabla('evaluadores_en_proyectos')->procesar_filas($datos);
+            	$aux = array();
+		foreach ($datos as $dat) {
+			$numero_pi = toba::memoria()->get_dato('numero_pi');
+			$titulo = toba::memoria()->get_dato('titulo');
+			if (isset($dat['evaluacion_archivo'])) {
+				$nombre_archivo = $dat['evaluacion_archivo']['name'];
+				if ($numero_pi != '')
+					$nuevo = $numero_pi;
+				else 
+					$nuevo = substr($titulo,0,50);
+				$nuevo = $this->sanear_string($nuevo);
+				$nombre_nuevo = 'evaluacion_'.$this->sanear_string($dat['tipo_informe']).'_'.$nuevo.'.pdf';   
+				$destino = '/home/fce/informes_inv/'.$nombre_nuevo;
+		
+				move_uploaded_file($dat['evaluacion_archivo']['tmp_name'], $destino);   
+				$dat['evaluacion_path'] = $destino;   
+			}
+			$aux[] = $dat;
+		}
+		$this->tabla('evaluadores_en_proyectos')->procesar_filas($aux);
 	}  
 
 	//-----------------------------------------------------------------------------------
