@@ -101,6 +101,18 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'investigaciones', --proyecto
+	'280000485', --dep_id
+	'280000409', --objeto_consumidor
+	'280000561', --objeto_proveedor
+	'proyectos_en_programas', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	'6'  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'investigaciones', --proyecto
 	'280000363', --dep_id
 	'280000409', --objeto_consumidor
 	'280000423', --objeto_proveedor
@@ -194,6 +206,22 @@ INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador
 	NULL, --cascada
 	'4'  --orden
 );
+INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
+	'investigaciones', --proyecto
+	'280000409', --objeto
+	'280000045', --asoc_id
+	NULL, --identificador
+	'investigaciones', --padre_proyecto
+	'280000393', --padre_objeto
+	'proyectos', --padre_id
+	NULL, --padre_clave
+	'investigaciones', --hijo_proyecto
+	'280000561', --hijo_objeto
+	'proyectos_en_programas', --hijo_id
+	NULL, --hijo_clave
+	NULL, --cascada
+	'5'  --orden
+);
 --- FIN Grupo de desarrollo 280
 
 ------------------------------------------------------------
@@ -234,4 +262,13 @@ INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_obje
 	'280000547', --padre_clave
 	'280000423', --hijo_objeto
 	'280000670'  --hijo_clave
+);
+INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
+	'investigaciones', --proyecto
+	'280000409', --objeto
+	'280000045', --asoc_id
+	'280000393', --padre_objeto
+	'280000547', --padre_clave
+	'280000561', --hijo_objeto
+	'280000902'  --hijo_clave
 );
