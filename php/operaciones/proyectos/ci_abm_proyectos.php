@@ -105,6 +105,23 @@ class ci_abm_proyectos extends investigaciones_ci
 		$this->tabla('proyectos_rendiciones')->procesar_filas($datos);
 	} 
 
+      
+	//-----------------------------------------------------------------------------------
+	//---- form_ml ----------------------------------------------------------------------
+	//-----------------------------------------------------------------------------------
+
+	function conf__form_ml_prog(investigaciones_ei_formulario_ml $form_ml)
+	{
+		if ($this->relacion()->esta_cargada()) {
+			$datos = $this->tabla('proyectos_en_programas')->get_filas();
+			$form_ml->set_datos($datos);
+		}
+	}
+
+	function evt__form_ml_prog__modificacion($datos)
+	{
+		$this->tabla('proyectos_en_programas')->procesar_filas($datos);
+	}          
         
 	//-----------------------------------------------------------------------------------
 	//---- form_ml ----------------------------------------------------------------------
