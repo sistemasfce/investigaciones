@@ -161,7 +161,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --carga_consulta_php
 	NULL, --carga_sql
 	'investigaciones', --carga_fuente
-	'INF1/Informe 1, INF2/Informe 2, INFF/Informe Final, INFA/Informe Anual', --carga_lista
+	'INF1/Informe 1, INF2/Informe 2,INF3/Informe 3 ,INFF/Informe Final, INFA/Informe Anual', --carga_lista
 	NULL, --carga_col_clave
 	NULL, --carga_col_desc
 	NULL, --carga_maestros
