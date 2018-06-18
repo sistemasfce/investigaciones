@@ -154,11 +154,11 @@ INSERT INTO apex_objeto_ut_formulario (objeto_ut_formulario_proyecto, objeto_ut_
 		</tr>
 		<tr>
 			<td>
-				<span style="font-size:12px;">[ef id=resolucion_fecha]</span></td>
+				<span style="font-size:12px;">[ef id=resolucion_numero]</span></td>
 		</tr>
 		<tr>
 			<td>
-				<span style="font-size:12px;">[ef id=resolucion_numero]</span></td>
+				<span style="font-size:12px;">[ef id=resolucion_fecha]</span></td>
 		</tr>
 		<tr>
 			<td>
@@ -225,7 +225,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'1', --orden
-	'Titulo', --etiqueta
+	'Título', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -305,7 +305,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'2', --orden
-	'Director', --etiqueta
+	'Responsable', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -385,7 +385,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'3', --orden
-	'Codirector', --etiqueta
+	'CoResponsable', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -465,7 +465,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'4', --orden
-	'Ubicacion', --etiqueta
+	'Ubicación', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -545,7 +545,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'5', --orden
-	'Proyecto estado', --etiqueta
+	'Estado', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -625,7 +625,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'6', --orden
-	'Estado observaciones', --etiqueta
+	'Observaciones', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -705,7 +705,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'7', --orden
-	'Fecha presentacion', --etiqueta
+	'Fecha presentación', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	NULL, --colapsado
@@ -784,8 +784,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'resolucion_fecha', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'8', --orden
-	'Resolucion fecha', --etiqueta
+	'9', --orden
+	'Resolución fecha', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	NULL, --colapsado
@@ -864,8 +864,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'resolucion_numero', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'9', --orden
-	'Resolucion numero', --etiqueta
+	'8', --orden
+	'Resolución', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	NULL, --colapsado
@@ -945,7 +945,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'10', --orden
-	'Numero pi', --etiqueta
+	'Número PI', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	NULL, --colapsado
@@ -1265,7 +1265,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'17', --orden
-	'Denominacion', --etiqueta
+	'Denominación', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado

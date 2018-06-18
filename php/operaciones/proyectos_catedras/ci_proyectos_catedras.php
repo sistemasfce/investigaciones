@@ -139,14 +139,14 @@ class ci_proyectos_catedras extends investigaciones_ci
     function conf__form_ml_ue(investigaciones_ei_formulario_ml $form_ml)
     {
         if ($this->relacion()->esta_cargada()) {
-            $datos = $this->tabla('investigadores_en_proyectos')->get_filas();
+            $datos = $this->tabla('investigadores_en_proyectos_catedras')->get_filas();
             $form_ml->set_datos($datos);
         }
     }
 
     function evt__form_ml_ue__modificacion($datos)
     {
-        $this->tabla('investigadores_en_proyectos')->procesar_filas($datos);
+        $this->tabla('investigadores_en_proyectos_catedras')->procesar_filas($datos);
     }     
 
     //-----------------------------------------------------------------------------------
@@ -156,7 +156,7 @@ class ci_proyectos_catedras extends investigaciones_ci
     function conf__form_ml_eval(investigaciones_ei_formulario_ml $form_ml)
     {
         if ($this->relacion()->esta_cargada()) {
-            $datos_fila = $this->tabla('evaluadores_en_proyectos')->get_filas();
+            $datos_fila = $this->tabla('evaluadores_en_proyectos_catedras')->get_filas();
             $aux = array();
             foreach ($datos_fila as $datos) {
                 // el 23 es para que corte la cadena despues del caracter 19, de /home/fce/informes_inv/
@@ -194,7 +194,7 @@ class ci_proyectos_catedras extends investigaciones_ci
             }
             $aux[] = $dat;
         }
-        $this->tabla('evaluadores_en_proyectos')->procesar_filas($aux);
+        $this->tabla('evaluadores_en_proyectos_catedras')->procesar_filas($aux);
     }  
 
     //-----------------------------------------------------------------------------------
@@ -204,7 +204,7 @@ class ci_proyectos_catedras extends investigaciones_ci
     function conf__form_ml_informes(investigaciones_ei_formulario_ml $form_ml)
     {
         if ($this->relacion()->esta_cargada()) {
-            $datos_fila = $this->tabla('proyectos_informes')->get_filas();
+            $datos_fila = $this->tabla('proyectos_catedras_informes')->get_filas();
             $aux = array();
             foreach ($datos_fila as $datos) {
                 // el 23 es para que corte la cadena despues del caracter 19, de /home/fce/informes_inv/
@@ -242,7 +242,7 @@ class ci_proyectos_catedras extends investigaciones_ci
             }
             $aux[] = $dat;
         }
-        $this->tabla('proyectos_informes')->procesar_filas($aux);        
+        $this->tabla('proyectos_catedras_informes')->procesar_filas($aux);        
     }  
 	
 	
