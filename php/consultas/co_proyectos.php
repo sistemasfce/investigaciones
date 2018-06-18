@@ -19,6 +19,21 @@ class co_proyectos
         ";
 	return toba::db()->consultar($sql);
     }
+    
+    function get_proyectos_catedras($where='1=1')
+    {
+        $sql = "SELECT *,
+			proyectos_estados.descripcion as estado_desc,
+			ubicaciones.codigo as ubicacion_desc,
+			investigadores.apellido || ', ' || investigadores.nombres as director_desc
+		FROM proyectos_catedras LEFT OUTER JOIN proyectos_estados ON (proyectos_catedras.proyecto_estado = proyectos_estados.proyecto_estado)
+			LEFT OUTER JOIN ubicaciones ON (proyectos_catedras.ubicacion = ubicaciones.ubicacion)
+			LEFT OUTER JOIN investigadores ON (proyectos_catedras.director = investigadores.investigador)
+		WHERE $where
+		ORDER BY denominacion,fecha_inicio::date, titulo
+        ";
+	return toba::db()->consultar($sql);
+    }    
 
     function get_personas_por_proyecto($where)
     {
