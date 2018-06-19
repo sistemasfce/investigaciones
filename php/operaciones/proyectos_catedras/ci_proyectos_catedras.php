@@ -92,7 +92,7 @@ class ci_proyectos_catedras extends investigaciones_ci
             $datos['proyecto_path'] = $destino;   
             $datos['entrego_proyecto'] = 'S'; 
         }       
-        $this->tabla('proyectos')->set($datos);
+        $this->tabla('proyectos_catedras')->set($datos);
     }
 	
     //-----------------------------------------------------------------------------------
