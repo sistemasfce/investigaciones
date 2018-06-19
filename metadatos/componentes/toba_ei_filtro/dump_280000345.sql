@@ -250,7 +250,7 @@ INSERT INTO apex_objeto_ei_filtro_col (objeto_ei_filtro_col, objeto_ei_filtro, o
 	'investigaciones', --objeto_ei_filtro_proyecto
 	'opciones', --tipo
 	'investigador', --nombre
-	'investigador', --expresion
+	'investigadores_en_proyectos.investigador', --expresion
 	'Investigador', --etiqueta
 	NULL, --descripcion
 	'0', --obligatorio

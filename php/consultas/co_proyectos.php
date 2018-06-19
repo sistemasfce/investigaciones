@@ -127,6 +127,20 @@ UNION
                     LEFT OUTER JOIN investigadores ON (investigadores_en_proyectos.investigador = investigadores.investigador)
                     LEFT OUTER JOIN proyectos_estados ON (proyectos.proyecto_estado = proyectos_estados.proyecto_estado)
 		WHERE $where
+                    
+                UNION
+
+		SELECT titulo, 
+			titulo as titulo_corto,
+			numero_pi,
+                        denominacion,
+                        investigadores.investigador,
+                        investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
+                        proyectos_estados.descripcion as estado_desc
+		FROM proyectos_catedras LEFT OUTER JOIN investigadores_en_proyectos ON (proyectos_catedras.proyecto_catedra = investigadores_en_proyectos.proyecto)
+                    LEFT OUTER JOIN investigadores ON (investigadores_en_proyectos.investigador = investigadores.investigador)
+                    LEFT OUTER JOIN proyectos_estados ON (proyectos_catedras.proyecto_estado = proyectos_estados.proyecto_estado)
+		WHERE $where
 		";
 	return toba::db()->consultar($sql);
    }
