@@ -78,20 +78,19 @@ class ci_proyectos_catedras extends investigaciones_ci
 
     function evt__form__modificacion($datos)
     {   
-        if (isset($datos['proyecto'])) {
-            $nombre_archivo = $datos['proyecto']['name'];
+        if (isset($datos['proyecto_archivo'])) {
+            $nombre_archivo = $datos['proyecto_archivo']['name'];
             if ($datos['numero_pi'] != '')
                 $nuevo = $datos['numero_pi'];
             else 
                 $nuevo = substr($datos['titulo'],0,50);
             $nuevo = $this->sanear_string($nuevo);
-            $nombre_nuevo = 'PR_CATEDRA_'.$nuevo.'.pdf';   
+            $nombre_nuevo = 'PRO_CATEDRA_'.$nuevo.'.pdf';   
             $destino = '/home/fce/informes_inv/'.$nombre_nuevo;
-
-            move_uploaded_file($datos['proyecto']['tmp_name'], $destino);   
+            move_uploaded_file($datos['proyecto_archivo']['tmp_name'], $destino);   
             $datos['proyecto_path'] = $destino;   
             $datos['entrego_proyecto'] = 'S'; 
-        }       
+        }      
         $this->tabla('proyectos_catedras')->set($datos);
     }
 	
