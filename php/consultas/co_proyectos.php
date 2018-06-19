@@ -137,8 +137,8 @@ UNION
                         investigadores.investigador,
                         investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
                         proyectos_estados.descripcion as estado_desc
-		FROM proyectos_catedras LEFT OUTER JOIN investigadores_en_proyectos ON (proyectos_catedras.proyecto_catedra = investigadores_en_proyectos.proyecto)
-                    LEFT OUTER JOIN investigadores ON (investigadores_en_proyectos.investigador = investigadores.investigador)
+		        FROM proyectos_catedras LEFT OUTER JOIN investigadores_en_proyectos_catedras ON (proyectos_catedras.proyecto_catedra = investigadores_en_proyectos_catedras.proyecto_catedra)
+                    LEFT OUTER JOIN investigadores ON (investigadores_en_proyectos_catedras.investigador = investigadores.investigador)
                     LEFT OUTER JOIN proyectos_estados ON (proyectos_catedras.proyecto_estado = proyectos_estados.proyecto_estado)
 		WHERE $where
 		";
