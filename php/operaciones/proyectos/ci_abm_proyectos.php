@@ -244,7 +244,9 @@ class ci_abm_proyectos extends investigaciones_ci
 	{
 		if ($this->relacion()->esta_cargada()) {
 			$datos = $this->tabla('proyectos')->get();
-			toba::memoria()->set_dato('numero_pi',$datos['numero_pi']);
+                        $programa_desc = toba::consulta_php('co_proyectos')->get_proyecto_en_programa($datos['proyecto']);
+                        $datos['programa_desc'] = $programa_desc['titulo'];
+                        toba::memoria()->set_dato('numero_pi',$datos['numero_pi']);
 			toba::memoria()->set_dato('titulo',$datos['titulo']);
 			// si esta cargada informe_1 armo el link para descarga
 			if ($datos['entrego_proyecto'] == 'S') {

@@ -8,6 +8,7 @@ class co_proyectos
 			CASE WHEN prorroga_hasta is not null THEN prorroga_hasta
 				ELSE fecha_final
 			END as fecha_hasta,
+                        (SELECT p2.titulo FROM proyectos as p2 LEFT OUTER JOIN proyectos_en_programas as pep ON p2.proyecto = pep.programa WHERE pep.proyecto = proyectos.proyecto) as programa_desc,
                         CASE WHEN numero_pi is not null THEN numero_pi || ' - ' || investigadores.apellido
                             ELSE titulo_corto
                         END as proyecto_desc,
@@ -177,6 +178,16 @@ UNION
 		ORDER BY titulo
 		";
 	return toba::db()->consultar($sql);
+   }
+   
+   function get_proyecto_en_programa($proyecto)
+   {
+       $sql = " SELECT titulo 
+                FROM proyectos_en_programas 
+                    LEFT OUTER JOIN proyectos ON proyectos_en_programas.programa = proyectos.proyecto
+                WHERE proyectos_en_programas.proyecto = $proyecto
+           ";
+       return toba::db()->consultar_fila($sql);
    }
 
 }
