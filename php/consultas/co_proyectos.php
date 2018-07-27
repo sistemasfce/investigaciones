@@ -8,6 +8,9 @@ class co_proyectos
 			CASE WHEN prorroga_hasta is not null THEN prorroga_hasta
 				ELSE fecha_final
 			END as fecha_hasta,
+                        CASE WHEN numero_pi is not null THEN numero_pi || ' - ' || investigadores.apellido
+                            ELSE titulo_corto
+                        END as proyecto_desc,
 			proyectos_estados.descripcion as estado_desc,
 			ubicaciones.codigo as ubicacion_desc,
 			investigadores.apellido || ', ' || investigadores.nombres as director_desc

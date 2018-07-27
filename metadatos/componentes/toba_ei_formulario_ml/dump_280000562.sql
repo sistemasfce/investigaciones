@@ -163,7 +163,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'investigaciones', --carga_fuente
 	NULL, --carga_lista
 	'proyecto', --carga_col_clave
-	'titulo_corto', --carga_col_desc
+	'proyecto_desc', --carga_col_desc
 	NULL, --carga_maestros
 	'0', --carga_cascada_relaj
 	'0', --cascada_mantiene_estado
