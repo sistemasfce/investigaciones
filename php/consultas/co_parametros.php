@@ -49,7 +49,15 @@ class co_parametros
 	return toba::db()->consultar($sql);
     }
 
-
+    function get_proyectos_tipos($where='1=1')
+    {
+        $sql = "SELECT *
+		FROM proyectos_tipos
+		WHERE $where
+		ORDER BY descripcion
+        ";
+	return toba::db()->consultar($sql);
+    }
 
 }
 ?>
