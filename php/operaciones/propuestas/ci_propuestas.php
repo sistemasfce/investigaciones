@@ -25,6 +25,15 @@ class ci_propuestas extends investigaciones_ci
     
     function evt__form__modificacion($datos)
     {
+        if (isset($datos['propuesta_archivo'])) {
+            $nombre_archivo = $datos['propuesta_archivo']['name'];
+            $nuevo = $datos['propuesta'];
+            $nombre_nuevo = 'PROPUESTA_'.$nuevo.'.pdf';   
+            $destino = '/home/fce/informes_inv/'.$nombre_nuevo;
+            move_uploaded_file($datos['propuesta_archivo']['tmp_name'], $destino);   
+            $datos['archivo'] = $destino;   
+	}
+        
         $this->tabla('propuestas')->set($datos);
     }
 
