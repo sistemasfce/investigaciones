@@ -60,5 +60,29 @@ class ci_evaluador_propuesta extends investigaciones_ci
         $this->set_pantalla('seleccion');
     }           
 
+    //-----------------------------------------------------------------------------------
+    //---- form -------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
+
+    function evt__form__mail($datos)
+    {
+        try {
+            $email = toba::consulta_php('co_propuestas')->get_mail_evaluador($datos['evaluador']);
+            if ($email['email'] == '')
+                return;
+            $asunto   = "Propuesta ";
+            $cuerpo_mail = '<p>'." ".
+                "".
+                "<br/><br/> ";
+            $mail_destino = $email['email'];
+
+            $mail = new toba_mail($mail_destino, $asunto, $cuerpo_mail);
+            $mail->set_html(true);
+            $mail->enviar();    
+        } catch (toba_error $e) {
+            toba::notificacion()->agregar('No es posible enviar el email.');
+        }    
+    }
+
 }
 ?>
