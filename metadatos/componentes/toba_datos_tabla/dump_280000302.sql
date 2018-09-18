@@ -170,62 +170,6 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
 	'investigaciones', --objeto_proyecto
 	'280000302', --objeto
-	'280000520', --col_id
-	'observaciones', --columna
-	'C', --tipo
-	'0', --pk
-	'', --secuencia
-	'500', --largo
-	NULL, --no_nulo
-	'0', --no_nulo_db
-	'0', --externa
-	'investigadores'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'investigaciones', --objeto_proyecto
-	'280000302', --objeto
-	'280000523', --col_id
-	'domicilio', --columna
-	'C', --tipo
-	'0', --pk
-	'', --secuencia
-	'100', --largo
-	NULL, --no_nulo
-	'0', --no_nulo_db
-	'0', --externa
-	'investigadores'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'investigaciones', --objeto_proyecto
-	'280000302', --objeto
-	'280000524', --col_id
-	'telefono', --columna
-	'C', --tipo
-	'0', --pk
-	'', --secuencia
-	'50', --largo
-	NULL, --no_nulo
-	'0', --no_nulo_db
-	'0', --externa
-	'investigadores'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'investigaciones', --objeto_proyecto
-	'280000302', --objeto
-	'280000525', --col_id
-	'mail', --columna
-	'C', --tipo
-	'0', --pk
-	'', --secuencia
-	'100', --largo
-	NULL, --no_nulo
-	'0', --no_nulo_db
-	'0', --externa
-	'investigadores'  --tabla
-);
-INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
-	'investigaciones', --objeto_proyecto
-	'280000302', --objeto
 	'280000527', --col_id
 	'aptitud', --columna
 	'E', --tipo

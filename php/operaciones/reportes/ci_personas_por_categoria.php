@@ -11,7 +11,7 @@ class ci_personas_por_categoria extends investigaciones_ci
             $where = $this->dep('filtro')->get_sql_where();
             //if ($where == '1=1')
             //    return;
-            $datos = toba::consulta_php('co_personas')->get_personas_por_categoria($where); 
+            $datos = toba::consulta_php('co_investigadores')->get_investigadores_por_categoria($where); 
             $cuadro->set_datos($datos);
 
     }

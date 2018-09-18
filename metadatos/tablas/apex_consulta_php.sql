@@ -40,4 +40,13 @@ INSERT INTO apex_consulta_php (proyecto, consulta_php, clase, archivo_clase, arc
 	NULL, --descripcion
 	'280000003'  --punto_montaje
 );
+INSERT INTO apex_consulta_php (proyecto, consulta_php, clase, archivo_clase, archivo, descripcion, punto_montaje) VALUES (
+	'investigaciones', --proyecto
+	'280000025', --consulta_php
+	'co_investigadores', --clase
+	'co_investigadores', --archivo_clase
+	'consultas/co_investigadores.php', --archivo
+	NULL, --descripcion
+	'280000003'  --punto_montaje
+);
 --- FIN Grupo de desarrollo 280
