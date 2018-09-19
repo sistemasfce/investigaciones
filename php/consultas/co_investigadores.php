@@ -13,7 +13,31 @@ class co_investigadores
 	return toba::db()->consultar($sql);
     }
     
-   function get_investigadores_por_categoria($where)
+    function get_investigadores_nombres($where='1=1')
+    {
+        $sql = "SELECT *, 
+			apellido || ', ' || nombres as nombre_completo
+		FROM investigadores
+		WHERE $where
+		ORDER BY apellido, nombres
+        ";
+	$datos_inv = toba::db()->consultar($sql);
+        
+        foreach ($datos_inv as $dat) {
+            if ($dat['persona'] == '') { // si no tengo id persona me quedo con el nombre y apellido de tabla local
+                $aux['investigador'] = $dat['investigador'];
+                $aux['nombre_completo'] = $dat['nombre_completo'];
+            } else { // busco el nombre en la tabla de plantadb
+                $datos_per = toba::consulta_php('co_personas')->get_datos_persona($dat['persona']);
+                $aux['investigador'] = $dat['investigador'];
+                $aux['nombre_completo'] = $datos_per['nombre_completo'];               
+            }
+            $lista[] = $aux;
+        }
+        return $lista;
+    }
+    
+    function get_investigadores_por_categoria($where)
     {
 	$sql = "
 		SELECT apellido || ', ' || nombres as nombre_completo,
