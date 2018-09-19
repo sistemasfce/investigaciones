@@ -41,7 +41,6 @@ class co_investigadores
     {
 	$sql = "
 		SELECT apellido || ', ' || nombres as nombre_completo,
-		mail,
 		(SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
                 	AND investigadores_categorias.investigador = investigadores.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc
 		FROM investigadores_categorias LEFT OUTER JOIN investigadores ON (investigadores_categorias.investigador = investigadores.investigador)
@@ -55,7 +54,6 @@ class co_investigadores
     {
 	$sql = "
 		SELECT apellido || ', ' || nombres as nombre_completo,
-			mail,
 			(SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
                           AND investigadores_categorias.investigador = investigadores.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc
 		FROM investigadores

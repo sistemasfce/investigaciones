@@ -43,7 +43,6 @@ class co_proyectos
     {
 	$sql = "
 		SELECT investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
-			investigadores.mail,
 			(SELECT descripcion FROM aptitudes WHERE aptitudes.aptitud = investigadores.aptitud) as aptitud_desc,
 			(SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
 				AND investigadores_categorias.investigador = investigadores.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc,
@@ -59,7 +58,6 @@ class co_proyectos
 UNION
 
                     SELECT dir.apellido || ', ' || dir.nombres as nombre_completo,
-            dir.mail,
             (SELECT descripcion FROM aptitudes WHERE aptitudes.aptitud = dir.aptitud) as aptitud_desc,
             (SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
                 AND investigadores_categorias.investigador = dir.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc,
@@ -73,7 +71,6 @@ UNION
 UNION
 
                     SELECT codir.apellido || ', ' || codir.nombres as nombre_completo,
-            codir.mail,
             (SELECT descripcion FROM aptitudes WHERE aptitudes.aptitud = codir.aptitud) as aptitud_desc,
             (SELECT descripcion FROM categorias, investigadores_categorias WHERE categorias.categoria = investigadores_categorias.resultado_categoria
                 AND investigadores_categorias.investigador = codir.investigador ORDER BY resultado_anio DESC limit 1) as categoria_desc,

@@ -88,3 +88,39 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 	'1'  --orden
 );
 --- FIN Grupo de desarrollo 280
+
+------------------------------------------------------------
+-- apex_objeto_datos_rel_asoc
+------------------------------------------------------------
+
+--- INICIO Grupo de desarrollo 280
+INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
+	'investigaciones', --proyecto
+	'280000665', --objeto
+	'280000050', --asoc_id
+	NULL, --identificador
+	'investigaciones', --padre_proyecto
+	'280000658', --padre_objeto
+	'propuestas', --padre_id
+	NULL, --padre_clave
+	'investigaciones', --hijo_proyecto
+	'280000670', --hijo_objeto
+	'evaluadores_en_propuestas', --hijo_id
+	NULL, --hijo_clave
+	NULL, --cascada
+	'1'  --orden
+);
+--- FIN Grupo de desarrollo 280
+
+------------------------------------------------------------
+-- apex_objeto_rel_columnas_asoc
+------------------------------------------------------------
+INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
+	'investigaciones', --proyecto
+	'280000665', --objeto
+	'280000050', --asoc_id
+	'280000658', --padre_objeto
+	'280001025', --padre_clave
+	'280000670', --hijo_objeto
+	'280001036'  --hijo_clave
+);

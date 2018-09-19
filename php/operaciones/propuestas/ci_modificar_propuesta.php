@@ -1,5 +1,4 @@
 <?php
-
 class ci_modificar_propuesta extends investigaciones_ci
 {
     //-------------------------------------------------------------------------
@@ -65,6 +64,23 @@ class ci_modificar_propuesta extends investigaciones_ci
     }        
 
     //-----------------------------------------------------------------------------------
+    //---- form_ml ----------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
+
+    function conf__form_ml(investigaciones_ei_formulario_ml $form_ml)
+    {
+        if ($this->relacion()->esta_cargada()) {
+            $datos = $this->tabla('evaluadores_en_propuestas')->get_filas();
+            $form_ml->set_datos($datos);
+        }        
+    }
+
+    function evt__form_ml__modificacion($datos)
+    {
+        $this->tabla('evaluadores_en_propuestas')->procesar_filas($datos); 
+    }
+    
+    //-----------------------------------------------------------------------------------
     //---- filtro -----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
 
@@ -101,3 +117,4 @@ class ci_modificar_propuesta extends investigaciones_ci
         $this->set_pantalla('seleccion');
     }  
 }
+?>
