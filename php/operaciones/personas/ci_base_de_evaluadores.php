@@ -20,7 +20,7 @@ class ci_base_de_evaluadores extends investigaciones_ci
 	function conf__cuadro(investigaciones_ei_cuadro $cuadro)
 	{
 		$where = $this->dep('filtro')->get_sql_where();
-		$datos = toba::consulta_php('co_personas')->get_evaluadores($where); 
+		$datos = toba::consulta_php('co_investigadores')->get_evaluadores($where); 
 		$cuadro->set_datos($datos);
 
 	}
