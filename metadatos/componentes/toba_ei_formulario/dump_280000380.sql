@@ -126,7 +126,7 @@ INSERT INTO apex_objeto_ut_formulario (objeto_ut_formulario_proyecto, objeto_ut_
 	<tbody>
 		<tr>
 			<td>
-				<span style="font-size:12px;">[ef id=investigador]</span></td>
+				<span style="font-size:12px;">[ef id=persona]</span></td>
 		</tr>
 		<tr>
 			<td>
@@ -183,9 +183,9 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'280000625', --objeto_ei_formulario_fila
 	'280000380', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'investigador', --identificador
+	'persona', --identificador
 	'ef_combo', --elemento_formulario
-	'investigador', --columnas
+	'persona', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'1', --orden
@@ -202,15 +202,15 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --estado_defecto
 	'0', --solo_lectura
 	'0', --solo_lectura_modificacion
-	'get_investigadores_nombres', --carga_metodo
+	'get_personas', --carga_metodo
 	NULL, --carga_clase
 	NULL, --carga_include
 	NULL, --carga_dt
-	'280000025', --carga_consulta_php
+	'280000012', --carga_consulta_php
 	NULL, --carga_sql
 	'investigaciones', --carga_fuente
 	NULL, --carga_lista
-	'investigador', --carga_col_clave
+	'persona', --carga_col_clave
 	'nombre_completo', --carga_col_desc
 	NULL, --carga_maestros
 	'0', --carga_cascada_relaj

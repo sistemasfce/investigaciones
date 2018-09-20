@@ -34,7 +34,10 @@ class co_investigadores
             }
             $lista[] = $aux;
         }
-        return $lista;
+        $orden[] = 'apellido';
+        $orden[] = 'nombres';
+        $datos_ordenados = rs_ordenar_por_columnas($lista, $orden);
+        return $datos_ordenados;
     }
     
     function get_investigadores_por_categoria($where)
@@ -86,7 +89,8 @@ class co_investigadores
             }
             $lista[] = $aux;
         }
-        return $lista;
+        $datos_ordenados = rs_ordenar_por_columna($lista, 'nombre_completo');
+        return $datos_ordenados;
     }   
 
     function get_evaluadores_nombres($where='1=1')
@@ -98,8 +102,20 @@ class co_investigadores
 			AND $where
 		ORDER BY nombre_completo
 		";
-
-	return toba::db()->consultar($sql);
+        $datos_inv = toba::db()->consultar($sql);
+	foreach ($datos_inv as $dat) {
+            if ($dat['persona'] == '') { // si no tengo id persona me quedo con el nombre y apellido de tabla local
+                $aux['evaluador'] = $dat['evaluador'];
+                $aux['nombre_completo'] = $dat['nombre_completo'];
+            } else { // busco el nombre en la tabla de plantadb
+                $datos_per = toba::consulta_php('co_personas')->get_datos_persona($dat['persona']);
+                $aux['evaluador'] = $dat['evaluador'];
+                $aux['nombre_completo'] = $datos_per['nombre_completo'];               
+            }
+            $lista[] = $aux;
+        }
+        $datos_ordenados = rs_ordenar_por_columna($lista, 'nombre_completo');
+        return $datos_ordenados;
     }   
 
     
