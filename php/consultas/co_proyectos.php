@@ -87,13 +87,12 @@ UNION
 
    function get_proyectos_por_evaluador($where)
    {
-	$sql = "SELECT investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
+	$sql = "SELECT 
 			proyectos.titulo,
 			proyectos.numero_pi,
 			evaluadores_en_proyectos.*
 		FROM evaluadores_en_proyectos 
 			LEFT OUTER JOIN evaluadores ON (evaluadores_en_proyectos.evaluador = evaluadores.evaluador)
-			LEFT OUTER JOIN investigadores ON (evaluadores.investigador = investigadores.investigador)
 			LEFT OUTER JOIN proyectos ON (evaluadores_en_proyectos.proyecto = proyectos.proyecto)
 		WHERE $where
 		";

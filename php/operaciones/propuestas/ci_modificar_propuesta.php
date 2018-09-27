@@ -60,8 +60,9 @@ class ci_modificar_propuesta extends investigaciones_ci
             move_uploaded_file($datos['propuesta_archivo']['tmp_name'], $destino);   
             $datos['archivo'] = $destino;   
 	}
+        toba::memoria()->set_dato('persona',$datos['director']);
         $this->tabla('propuestas')->set($datos);
-    }        
+    }       
 
     //-----------------------------------------------------------------------------------
     //---- form_ml ----------------------------------------------------------------------
@@ -116,5 +117,27 @@ class ci_modificar_propuesta extends investigaciones_ci
         $this->dep('relacion')->resetear();
         $this->set_pantalla('seleccion');
     }  
+    
+    function evt__mail()
+    {
+        try {
+            $director = toba::memoria()->get_dato('persona');
+            $email_dir = toba::consulta_php('co_investigadores')->get_mail_investigador($director);
+            $email_eval = toba::consulta_php('co_investigadores')->get_mail_evaluador($datos['evaluador']);
+            if ($email['email'] == '')
+                return;
+            $asunto   = "Propuesta de investigación";
+            $cuerpo_mail = '<p>'." ".
+                "".
+                "<br/><br/> ";
+            $mail_destino = $email['email'];
+        
+            $mail = new toba_mail($mail_destino, $asunto, $cuerpo_mail);
+            $mail->set_html(true);
+            $mail->enviar();    
+        } catch (toba_error $e) {
+            toba::notificacion()->agregar('No es posible enviar el email.');
+        }    
+    }    
 }
 ?>
