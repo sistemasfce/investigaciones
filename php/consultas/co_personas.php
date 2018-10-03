@@ -22,6 +22,18 @@ class co_personas
 		WHERE persona = $persona
         ";
 	return toba::db('plantadb')->consultar_fila($sql);
-    }    
+    } 
+    
+    function get_datos_personas($personas)
+    {
+        $sql = "SELECT *, 
+                    date_part('year',age(fecha_nac)) as edad,
+                    apellido || ', ' || nombres as nombre_completo
+		FROM personas
+		WHERE persona in ($personas)
+                ORDER BY persona
+        ";
+	return toba::db('plantadb')->consultar($sql);
+    }       
 }
 ?>

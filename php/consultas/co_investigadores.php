@@ -72,13 +72,30 @@ class co_investigadores
 	$sql = "SELECT evaluadores.*
 		FROM evaluadores
 		WHERE $where
+                ORDER BY persona
 		";
+        // obtengo todos los evaluadores de la tabla ordenados por persona
 	$datos_inv = toba::db()->consultar($sql);
         
+        $where_array = '';
+        // para cada evaluador armo un array para usar el where in ()
+        // armo un diccionario con clave persona, valor evaluador
         foreach ($datos_inv as $dat) {
-            $datos_per = toba::consulta_php('co_personas')->get_datos_persona($dat['persona']);
-            $aux['evaluador'] = $dat['evaluador'];
-            $aux['nombre_completo'] = $datos_per['nombre_completo'];               
+            $where_array = $where_array . $dat['persona'] . ',';
+            $dict[$dat['persona']] = $dat['evaluador'];
+            //$datos_per = toba::consulta_php('co_personas')->get_datos_persona($dat['persona']);
+            //$aux['evaluador'] = $dat['evaluador'];
+            //$aux['nombre_completo'] = $datos_per['nombre_completo'];               
+            //$lista[] = $aux;
+        }
+        // quito la ultima coma
+        $where_array = substr($where_array, 0, -1);
+        // obtengo los nombres completos y persona
+        $datos_per = toba::consulta_php('co_personas')->get_datos_personas($where_array);
+        // armo el listado solo con evaluador sacado del diccionario y nombre completo
+        foreach ($datos_per as $dp) {
+            $aux['evaluador'] = $dict[$dp['persona']];
+            $aux['nombre_completo'] = $dp['nombre_completo'];
             $lista[] = $aux;
         }
         $datos_ordenados = rs_ordenar_por_columna($lista, 'nombre_completo');

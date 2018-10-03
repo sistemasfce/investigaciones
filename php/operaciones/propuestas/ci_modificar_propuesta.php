@@ -28,7 +28,7 @@ class ci_modificar_propuesta extends investigaciones_ci
     {
         $this->relacion()->cargar($seleccion);
         $this->set_pantalla('edicion');
-    }    
+    }
 
     function conf__form(investigaciones_ei_formulario $form)
     {
@@ -45,7 +45,6 @@ class ci_modificar_propuesta extends investigaciones_ci
                 $datos['propuesta_path_v'] = "<a href='{$temp_archivo['url']}'target='_blank'>Descargar archivo</a>";
                 $datos['propuesta_archivo'] = $nombre. ' - Tam.: '.$tamanio. ' KB';  
             }
-            
             $form->set_datos($datos);
         }
     }        
