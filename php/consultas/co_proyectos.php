@@ -115,6 +115,7 @@ UNION
 
    function get_proyectos_por_persona($where)
    {
+       $director = substr($where, 19);
 	$sql = "
 		SELECT titulo, 
 			titulo_corto,
@@ -123,8 +124,8 @@ UNION
                         investigadores.investigador,
                         investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
                         proyectos_estados.descripcion as estado_desc
-		FROM proyectos LEFT OUTER JOIN investigadores_en_proyectos ON (proyectos.proyecto = investigadores_en_proyectos.proyecto)
-                    LEFT OUTER JOIN investigadores ON (investigadores_en_proyectos.investigador = investigadores.investigador)
+		FROM proyectos LEFT OUTER JOIN investigadores_en_proyectos as ienp ON (proyectos.proyecto = ienp.proyecto)
+                    LEFT OUTER JOIN investigadores ON (ienp.investigador = investigadores.investigador)
                     LEFT OUTER JOIN proyectos_estados ON (proyectos.proyecto_estado = proyectos_estados.proyecto_estado)
 		WHERE $where
                     
@@ -137,10 +138,37 @@ UNION
                         investigadores.investigador,
                         investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
                         proyectos_estados.descripcion as estado_desc
-		        FROM proyectos_catedras LEFT OUTER JOIN investigadores_en_proyectos_catedras ON (proyectos_catedras.proyecto_catedra = investigadores_en_proyectos_catedras.proyecto_catedra)
-                    LEFT OUTER JOIN investigadores ON (investigadores_en_proyectos_catedras.investigador = investigadores.investigador)
+		        FROM proyectos_catedras LEFT OUTER JOIN investigadores_en_proyectos_catedras as ienp ON (proyectos_catedras.proyecto_catedra = ienp.proyecto_catedra)
+                    LEFT OUTER JOIN investigadores ON (ienp.investigador = investigadores.investigador)
                     LEFT OUTER JOIN proyectos_estados ON (proyectos_catedras.proyecto_estado = proyectos_estados.proyecto_estado)
 		WHERE $where
+
+                UNION
+                
+		SELECT titulo, 
+			titulo_corto,
+			numero_pi,
+                        denominacion,
+                        investigadores.investigador,
+                        investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
+                        proyectos_estados.descripcion as estado_desc
+		FROM proyectos as ienp LEFT OUTER JOIN investigadores ON (ienp.director = investigadores.investigador)
+                LEFT OUTER JOIN proyectos_estados ON (ienp.proyecto_estado = proyectos_estados.proyecto_estado)
+                WHERE ienp.director $director
+                    
+                UNION
+                
+		SELECT titulo, 
+			titulo_corto,
+			numero_pi,
+                        denominacion,
+                        investigadores.investigador,
+                        investigadores.apellido || ', ' || investigadores.nombres as nombre_completo,
+                        proyectos_estados.descripcion as estado_desc
+		FROM proyectos as ienp LEFT OUTER JOIN investigadores ON (ienp.codirector = investigadores.investigador)
+                LEFT OUTER JOIN proyectos_estados ON (ienp.proyecto_estado = proyectos_estados.proyecto_estado)
+                WHERE ienp.codirector $director
+                    
 		";
 	return toba::db()->consultar($sql);
    }
