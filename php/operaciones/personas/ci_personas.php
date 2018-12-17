@@ -37,7 +37,8 @@ class ci_personas extends investigaciones_ci
         $orden[] = 'apellido';
         $orden[] = 'nombres';
         $datos_ordenados = rs_ordenar_por_columnas($datos, $orden);
-        $cuadro->set_datos($datos_ordenados);
+        if (isset($datos_ordenados))
+            $cuadro->set_datos($datos_ordenados);
     }
 
     function evt__cuadro__seleccion($seleccion)

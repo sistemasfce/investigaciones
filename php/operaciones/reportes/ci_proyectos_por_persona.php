@@ -13,7 +13,6 @@ class ci_proyectos_por_persona extends investigaciones_ci
                     return;
             $datos = toba::consulta_php('co_proyectos')->get_proyectos_por_persona($where); 
             $cuadro->set_datos($datos);
-
     }
 
     //-----------------------------------------------------------------------------------
