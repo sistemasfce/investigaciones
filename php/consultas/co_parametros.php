@@ -7,7 +7,7 @@ class co_parametros
     {
         $sql = "SELECT *
 		FROM ubicaciones 
-		WHERE $where
+		WHERE $where AND ubicacion <> 4
         ";
 	return toba::db()->consultar($sql);
     }

@@ -33,6 +33,7 @@ class ci_propuestas extends investigaciones_ci
             $datos['archivo'] = $destino;   
 	}
         $datos['ciclo_lectivo'] = date('Y');
+        $datos['estado'] = 1;
         $this->tabla('propuestas')->set($datos);
     }
 
