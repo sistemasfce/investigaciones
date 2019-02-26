@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000665]--  Modificar propuesta - relacion 
+--[280000773]--  Cargar propuesta (Pp-01) - relacion 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -9,7 +9,7 @@
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, clase_proyecto, clase, punto_montaje, subclase, subclase_archivo, objeto_categoria_proyecto, objeto_categoria, nombre, titulo, colapsable, descripcion, fuente_datos_proyecto, fuente_datos, solicitud_registrar, solicitud_obj_obs_tipo, solicitud_obj_observacion, parametro_a, parametro_b, parametro_c, parametro_d, parametro_e, parametro_f, usuario, creacion, posicion_botonera) VALUES (
 	'investigaciones', --proyecto
-	'280000665', --objeto
+	'280000773', --objeto
 	NULL, --anterior
 	NULL, --identificador
 	NULL, --reflexivo
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'Modificar propuesta - relacion', --nombre
+	'Cargar propuesta (Pp-01) - relacion', --nombre
 	NULL, --titulo
 	NULL, --colapsable
 	NULL, --descripcion
@@ -36,7 +36,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --parametro_e
 	NULL, --parametro_f
 	NULL, --usuario
-	'2018-08-24 10:32:37', --creacion
+	'2019-02-26 10:12:16', --creacion
 	NULL  --posicion_botonera
 );
 --- FIN Grupo de desarrollo 280
@@ -46,7 +46,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 ------------------------------------------------------------
 INSERT INTO apex_objeto_datos_rel (proyecto, objeto, debug, clave, ap, punto_montaje, ap_clase, ap_archivo, sinc_susp_constraints, sinc_orden_automatico, sinc_lock_optimista) VALUES (
 	'investigaciones', --proyecto
-	'280000665', --objeto
+	'280000773', --objeto
 	'0', --debug
 	NULL, --clave
 	'2', --ap
@@ -65,14 +65,14 @@ INSERT INTO apex_objeto_datos_rel (proyecto, objeto, debug, clave, ap, punto_mon
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'investigaciones', --proyecto
-	'280000578', --dep_id
-	'280000665', --objeto_consumidor
-	'280000670', --objeto_proveedor
-	'evaluadores_en_propuestas', --identificador
-	NULL, --parametros_a
-	NULL, --parametros_b
+	'280000674', --dep_id
+	'280000773', --objeto_consumidor
+	'280000772', --objeto_proveedor
+	'propuestas', --identificador
+	'1', --parametros_a
+	'1', --parametros_b
 	NULL, --parametros_c
 	NULL, --inicializar
-	'2'  --orden
+	'1'  --orden
 );
 --- FIN Grupo de desarrollo 280

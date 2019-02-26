@@ -30,7 +30,6 @@ class ci_personas extends investigaciones_ci
                 $this->s__datos_per = toba::consulta_php('co_personas')->get_datos_persona($per['persona']); 
                 $this->s__datos_per['investigador'] = $per['investigador'];               
             }
-
             $datos[] = $this->s__datos_per;
         }
         $orden = array();

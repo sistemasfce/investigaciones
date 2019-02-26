@@ -2,13 +2,11 @@
  
 class co_propuestas
 {
-    function get_proximo_numero()
+    function get_ultimo_numero()
     {
-	    $sql = "SELECT MAX(propuesta) + 1 as propuesta
-		    FROM propuestas
-        ";
-	return toba::db()->consultar_fila($sql);
-    }
+        $sql = "SELECT numero FROM propuestas WHERE numero <> '' ORDER BY propuesta DESC LIMIT 1";
+        return toba::db()->consultar_fila($sql);
+    }   
 
     function get_propuestas($where='1=1')
     {

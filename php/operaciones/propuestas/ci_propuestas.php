@@ -19,7 +19,6 @@ class ci_propuestas extends investigaciones_ci
 
     function conf__form(investigaciones_ei_formulario $form)
     {
-        $datos = toba::consulta_php('co_propuestas')->get_proximo_numero();
         $form->set_datos($datos);
     }    
     
@@ -33,7 +32,7 @@ class ci_propuestas extends investigaciones_ci
             move_uploaded_file($datos['propuesta_archivo']['tmp_name'], $destino);   
             $datos['archivo'] = $destino;   
 	}
-        
+        $datos['ciclo_lectivo'] = date('Y');
         $this->tabla('propuestas')->set($datos);
     }
 
@@ -42,9 +41,10 @@ class ci_propuestas extends investigaciones_ci
         try {
             $this->dep('relacion')->sincronizar();
             $this->dep('relacion')->resetear();
-            $this->informar_msg("La propuesta fue cargada exitosamente","aviso");
+            $datos = toba::consulta_php('co_propuestas')->get_ultimo_numero();
+            toba::notificacion()->agregar('Propuesta registrada con N° '.$datos['numero'], 'info');
         }catch (toba_error $e) {
-            toba::notificacion()->agregar('No se puede eliminar el registro', 'error');
+            toba::notificacion()->agregar('No se puede insertar el registro', 'error');
         }
     }
 

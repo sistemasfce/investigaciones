@@ -59,5 +59,14 @@ class co_parametros
 	return toba::db()->consultar($sql);
     }
 
+    function get_propuestas_estados($where='1=1')
+    {
+        $sql = "SELECT *
+		FROM propuestas_estados
+		WHERE $where
+		ORDER BY descripcion
+        ";
+	return toba::db()->consultar($sql);
+    }
 }
 ?>
