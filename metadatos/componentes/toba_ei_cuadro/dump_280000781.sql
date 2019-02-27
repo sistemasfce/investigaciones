@@ -322,7 +322,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280001237', --objeto_cuadro_col
 	'ubicacion_desc', --clave
 	'7', --orden
-	'Ubicación', --titulo
+	'Sede/Delegación', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'0', --estilo
 	NULL, --ancho
