@@ -21,12 +21,30 @@ class ci_cargar_evaluador_pic extends investigaciones_ci
     {
         $where = $this->dep('filtro')->get_sql_where();
         $aux = array();
+        $where = $where . ' AND propuestas.estado = 1 AND propuestas.tipo = 1';
         $datos = toba::consulta_php('co_propuestas')->get_propuestas($where);
         foreach ($datos as $dat) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['proponente']);
             $dat['nombre_completo'] = $nombre['nombre_completo'];
+            if (isset($dat['carrera'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_carreras('carrera = '.$dat['carrera']);
+                $dat['carrera_desc'] = $nombre[0]['nombre'];     
+            }
+            if (isset($dat['departamento'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_departamentos('departamento = '.$dat['departamento']);
+                $dat['departamento_desc'] = $nombre[0]['descripcion'];     
+            }    
+            if (isset($dat['asignatura'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_asignaturas('actividad = '.$dat['actividad']);
+                $dat['asignatura_desc'] = $nombre[0]['descripcion'];     
+            } 
+            if (isset($dat['ambito'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_ambitos('ambito = '.$dat['ambito']);
+                $dat['ambito_desc'] = $nombre[0]['descripcion'];     
+            }             
             $aux[] = $dat;
         }
+        
         $cuadro->set_datos($aux);
     }
 

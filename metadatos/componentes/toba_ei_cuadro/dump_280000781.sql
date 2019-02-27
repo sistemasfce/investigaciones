@@ -351,7 +351,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000781', --objeto_cuadro
 	'280001238', --objeto_cuadro_col
-	'carrera', --clave
+	'carrera_desc', --clave
 	'8', --orden
 	'Carrera', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
@@ -382,7 +382,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000781', --objeto_cuadro
 	'280001239', --objeto_cuadro_col
-	'departamento', --clave
+	'departamento_desc', --clave
 	'9', --orden
 	'Departamento', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
@@ -413,7 +413,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000781', --objeto_cuadro
 	'280001240', --objeto_cuadro_col
-	'asignatura', --clave
+	'asignatura_desc', --clave
 	'10', --orden
 	'Asignatura', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
@@ -444,7 +444,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000781', --objeto_cuadro
 	'280001241', --objeto_cuadro_col
-	'ambito', --clave
+	'ambito_desc', --clave
 	'11', --orden
 	'Ambito', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
@@ -481,7 +481,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'ei-cuadro-col-tit', --estilo_titulo
 	'4', --estilo
 	NULL, --ancho
-	'1', --formateo
+	'13', --formateo
 	NULL, --vinculo_indice
 	NULL, --no_ordenar
 	NULL, --mostrar_xls

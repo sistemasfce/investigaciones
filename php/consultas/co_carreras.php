@@ -29,9 +29,29 @@ class co_carreras
 	if (!isset($where)) $where = '1=1';
         $sql = "SELECT *
 		FROM departamentos
-		WHERE departamento in (1,2,3,4,5,6,8)
+		WHERE $where AND departamento in (1,2,3,4,5,6,8)
         ";
 	return toba::db('plantadb')->consultar($sql);
+    }
+    
+    function get_carreras($where=null)
+    {
+	if (!isset($where)) $where = '1=1';
+        $sql = "SELECT *
+		FROM carreras
+		WHERE $where 
+        ";
+	return toba::db('plantadb')->consultar($sql);
+    }    
+
+    function get_asignaturas($where=null)
+    {
+	if (!isset($where)) $where = '1=1';
+        $sql = "SELECT *
+		FROM actividades
+		WHERE $where 
+        ";
+	return toba::db('plantadb')->consultar($sql);    
     }
 }
 ?>

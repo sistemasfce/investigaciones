@@ -15,7 +15,7 @@ class co_propuestas
                         proyectos_tipos.descripcion as tipo_desc
                 FROM propuestas LEFT OUTER JOIN ubicaciones ON propuestas.ubicacion = ubicaciones.ubicacion
                 LEFT OUTER JOIN proyectos_tipos ON propuestas.tipo = proyectos_tipos.proyecto_tipo
-                WHERE $where
+                WHERE $where 
         ";
 	return toba::db()->consultar($sql);
     }    
