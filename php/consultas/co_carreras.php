@@ -16,6 +16,7 @@ class co_carreras
     function get_asignaturas_departamento($carrera, $departamento)
     {
         $sql = "SELECT  actividades.actividad,
+                        substring(actividades.descripcion,0,80) as nombre_corto,
                         actividades.descripcion
 		FROM actividades LEFT OUTER JOIN carreras_actividades ON actividades.actividad = carreras_actividades.actividad
 		WHERE carreras_actividades.carrera = $carrera AND actividades.departamento = $departamento
@@ -47,8 +48,19 @@ class co_carreras
     function get_asignaturas($where=null)
     {
 	if (!isset($where)) $where = '1=1';
-        $sql = "SELECT *
+        $sql = "SELECT *,
+                        substring(actividades.descripcion,0,80) as nombre_corto
 		FROM actividades
+		WHERE $where 
+        ";
+	return toba::db('plantadb')->consultar($sql);    
+    }
+    
+    function get_ambitos($where=null)
+    {
+	if (!isset($where)) $where = '1=1';
+        $sql = "SELECT *
+		FROM ambitos
 		WHERE $where 
         ";
 	return toba::db('plantadb')->consultar($sql);    

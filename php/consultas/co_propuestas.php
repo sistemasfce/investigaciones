@@ -12,9 +12,11 @@ class co_propuestas
     {
 	$sql = "SELECT *,
                         ubicaciones.descripcion as ubicacion_desc,
-                        proyectos_tipos.descripcion as tipo_desc
+                        proyectos_tipos.descripcion as tipo_desc,
+                        propuestas_estados.descripcion as estado_desc
                 FROM propuestas LEFT OUTER JOIN ubicaciones ON propuestas.ubicacion = ubicaciones.ubicacion
                 LEFT OUTER JOIN proyectos_tipos ON propuestas.tipo = proyectos_tipos.proyecto_tipo
+                LEFT OUTER JOIN propuestas_estados ON propuestas.estado = propuestas_estados.propuesta_estado
                 WHERE $where 
         ";
 	return toba::db()->consultar($sql);

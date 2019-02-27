@@ -82,7 +82,8 @@ class co_investigadores
         // armo un diccionario con clave persona, valor evaluador
         foreach ($datos_inv as $dat) {
             $where_array = $where_array . $dat['persona'] . ',';
-            $dict[$dat['persona']] = $dat['evaluador'];
+            $dict[$dat['persona']] = $dat['persona'];
+            $dict[$dat['evaluador']] = $dat['evaluador'];
             //$datos_per = toba::consulta_php('co_personas')->get_datos_persona($dat['persona']);
             //$aux['evaluador'] = $dat['evaluador'];
             //$aux['nombre_completo'] = $datos_per['nombre_completo'];               
@@ -94,7 +95,8 @@ class co_investigadores
         $datos_per = toba::consulta_php('co_personas')->get_datos_personas($where_array);
         // armo el listado solo con evaluador sacado del diccionario y nombre completo
         foreach ($datos_per as $dp) {
-            $aux['evaluador'] = $dict[$dp['persona']];
+            $aux['persona'] = $dict[$dp['persona']];
+            $aux['evaluador'] = $dict[$dp['evaluador']];
             $aux['nombre_completo'] = $dp['nombre_completo'];
             $lista[] = $aux;
         }
