@@ -41,6 +41,7 @@ class co_carreras
         $sql = "SELECT *
 		FROM carreras
 		WHERE $where 
+                ORDER BY nombre
         ";
 	return toba::db('plantadb')->consultar($sql);
     }    
@@ -51,7 +52,8 @@ class co_carreras
         $sql = "SELECT *,
                         substring(actividades.descripcion,0,80) as nombre_corto
 		FROM actividades
-		WHERE $where 
+		WHERE $where AND ambito = 1
+                ORDER BY nombre_corto
         ";
 	return toba::db('plantadb')->consultar($sql);    
     }

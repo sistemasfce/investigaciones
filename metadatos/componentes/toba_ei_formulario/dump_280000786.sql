@@ -16,12 +16,12 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'toba', --clase_proyecto
 	'toba_ei_formulario', --clase
 	'280000003', --punto_montaje
-	NULL, --subclase
-	NULL, --subclase_archivo
+	'form_carga', --subclase
+	'operaciones/propuestas/form_carga.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'Cargar evaluador propuesta PIC (Pp-02) - form', --nombre
-	NULL, --titulo
+	'Cargar evaluador propuesta PIC (Pp-03)', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	'investigaciones', --fuente_datos_proyecto

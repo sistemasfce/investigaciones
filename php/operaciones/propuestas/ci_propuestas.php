@@ -52,6 +52,7 @@ class ci_propuestas extends investigaciones_ci
     function evt__cancelar()
     {
         $this->dep('relacion')->resetear();
+        
     }          
 
 }

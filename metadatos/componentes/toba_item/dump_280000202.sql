@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000202]--  Cargar evaluación propuesta PII (Pp-xx) 
+--[280000202]--  Cargar evaluación propuesta PII 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Cargar evaluación propuesta PII (Pp-xx)', --nombre
+	'Cargar evaluación propuesta PII', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion

@@ -18,6 +18,7 @@ class co_propuestas
                 LEFT OUTER JOIN proyectos_tipos ON propuestas.tipo = proyectos_tipos.proyecto_tipo
                 LEFT OUTER JOIN propuestas_estados ON propuestas.estado = propuestas_estados.propuesta_estado
                 WHERE $where 
+                ORDER BY ciclo_lectivo, numero
         ";
 	return toba::db()->consultar($sql);
     }    
