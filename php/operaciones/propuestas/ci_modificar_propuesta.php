@@ -19,9 +19,32 @@ class ci_modificar_propuesta extends investigaciones_ci
 
 	function conf__cuadro(investigaciones_ei_cuadro $cuadro)
 	{
-		$where = $this->dep('filtro')->get_sql_where();
-		$datos = toba::consulta_php('co_propuestas')->get_propuestas($where);
-		$cuadro->set_datos($datos);
+        $where = $this->dep('filtro')->get_sql_where();
+        $aux = array();
+        $datos = toba::consulta_php('co_propuestas')->get_propuestas($where);
+        foreach ($datos as $dat) {
+            $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['proponente']);
+            $dat['nombre_completo'] = $nombre['nombre_completo'];
+            if (isset($dat['carrera'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_carreras('carrera = '.$dat['carrera']);
+                $dat['carrera_desc'] = $nombre[0]['nombre'];     
+            }
+            if (isset($dat['departamento'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_departamentos('departamento = '.$dat['departamento']);
+                $dat['departamento_desc'] = $nombre[0]['descripcion'];     
+            }    
+            if (isset($dat['asignatura'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_asignaturas('actividad = '.$dat['asignatura']);
+                $dat['asignatura_desc'] = $nombre[0]['descripcion'];     
+            } 
+            if (isset($dat['ambito'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_ambitos('ambito = '.$dat['ambito']);
+                $dat['ambito_desc'] = $nombre[0]['descripcion'];     
+            }             
+            $aux[] = $dat;
+        }
+        $datos_ordenados = rs_ordenar_por_columna($aux, 'numero');
+        $cuadro->set_datos($datos_ordenados);
 	}
 
 	function evt__cuadro__seleccion($seleccion)

@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000665]--  Modificar propuesta - relacion 
+--[280000804]--  fceCargar evaluador propuesta PIC (Pp-02) - relacion 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -9,7 +9,7 @@
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, clase_proyecto, clase, punto_montaje, subclase, subclase_archivo, objeto_categoria_proyecto, objeto_categoria, nombre, titulo, colapsable, descripcion, fuente_datos_proyecto, fuente_datos, solicitud_registrar, solicitud_obj_obs_tipo, solicitud_obj_observacion, parametro_a, parametro_b, parametro_c, parametro_d, parametro_e, parametro_f, usuario, creacion, posicion_botonera) VALUES (
 	'investigaciones', --proyecto
-	'280000665', --objeto
+	'280000804', --objeto
 	NULL, --anterior
 	NULL, --identificador
 	NULL, --reflexivo
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'Modificar propuesta - relacion', --nombre
+	'fceCargar evaluador propuesta PIC (Pp-02) - relacion', --nombre
 	NULL, --titulo
 	NULL, --colapsable
 	NULL, --descripcion
@@ -36,7 +36,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --parametro_e
 	NULL, --parametro_f
 	NULL, --usuario
-	'2018-08-24 10:32:37', --creacion
+	'2019-02-27 09:31:20', --creacion
 	NULL  --posicion_botonera
 );
 --- FIN Grupo de desarrollo 280
@@ -46,7 +46,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 ------------------------------------------------------------
 INSERT INTO apex_objeto_datos_rel (proyecto, objeto, debug, clave, ap, punto_montaje, ap_clase, ap_archivo, sinc_susp_constraints, sinc_orden_automatico, sinc_lock_optimista) VALUES (
 	'investigaciones', --proyecto
-	'280000665', --objeto
+	'280000804', --objeto
 	'0', --debug
 	NULL, --clave
 	'2', --ap
@@ -65,20 +65,8 @@ INSERT INTO apex_objeto_datos_rel (proyecto, objeto, debug, clave, ap, punto_mon
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'investigaciones', --proyecto
-	'280000578', --dep_id
-	'280000665', --objeto_consumidor
-	'280000670', --objeto_proveedor
-	'evaluadores_en_propuestas', --identificador
-	NULL, --parametros_a
-	NULL, --parametros_b
-	NULL, --parametros_c
-	NULL, --inicializar
-	'2'  --orden
-);
-INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
-	'investigaciones', --proyecto
-	'280000699', --dep_id
-	'280000665', --objeto_consumidor
+	'280000700', --dep_id
+	'280000804', --objeto_consumidor
 	'280000772', --objeto_proveedor
 	'propuestas', --identificador
 	'1', --parametros_a
@@ -88,39 +76,3 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 	'1'  --orden
 );
 --- FIN Grupo de desarrollo 280
-
-------------------------------------------------------------
--- apex_objeto_datos_rel_asoc
-------------------------------------------------------------
-
---- INICIO Grupo de desarrollo 280
-INSERT INTO apex_objeto_datos_rel_asoc (proyecto, objeto, asoc_id, identificador, padre_proyecto, padre_objeto, padre_id, padre_clave, hijo_proyecto, hijo_objeto, hijo_id, hijo_clave, cascada, orden) VALUES (
-	'investigaciones', --proyecto
-	'280000665', --objeto
-	'280000054', --asoc_id
-	NULL, --identificador
-	'investigaciones', --padre_proyecto
-	'280000772', --padre_objeto
-	'propuestas', --padre_id
-	NULL, --padre_clave
-	'investigaciones', --hijo_proyecto
-	'280000670', --hijo_objeto
-	'evaluadores_en_propuestas', --hijo_id
-	NULL, --hijo_clave
-	NULL, --cascada
-	'1'  --orden
-);
---- FIN Grupo de desarrollo 280
-
-------------------------------------------------------------
--- apex_objeto_rel_columnas_asoc
-------------------------------------------------------------
-INSERT INTO apex_objeto_rel_columnas_asoc (proyecto, objeto, asoc_id, padre_objeto, padre_clave, hijo_objeto, hijo_clave) VALUES (
-	'investigaciones', --proyecto
-	'280000665', --objeto
-	'280000054', --asoc_id
-	'280000772', --padre_objeto
-	'280001084', --padre_clave
-	'280000670', --hijo_objeto
-	'280001036'  --hijo_clave
-);

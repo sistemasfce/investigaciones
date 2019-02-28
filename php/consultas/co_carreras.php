@@ -65,5 +65,16 @@ class co_carreras
         ";
 	return toba::db('plantadb')->consultar($sql);    
     }
+    
+    function get_ciclos_lectivos($where=null)
+    {
+	if (!isset($where)) $where = '1=1';
+        $sql = "SELECT *
+		FROM ciclos_lectivos
+		WHERE $where 
+                ORDER BY ciclo_lectivo DESC
+        ";
+	return toba::db('plantadb')->consultar($sql);    
+    }    
 }
 ?>

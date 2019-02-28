@@ -35,7 +35,7 @@ class ci_cargar_evaluacion_pic extends investigaciones_ci
                 $dat['departamento_desc'] = $nombre[0]['descripcion'];     
             }    
             if (isset($dat['asignatura'])) {
-                $nombre = toba::consulta_php('co_carreras')->get_asignaturas('actividad = '.$dat['actividad']);
+                $nombre = toba::consulta_php('co_carreras')->get_asignaturas('actividad = '.$dat['asignatura']);
                 $dat['asignatura_desc'] = $nombre[0]['descripcion'];     
             } 
             if (isset($dat['ambito'])) {

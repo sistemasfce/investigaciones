@@ -16,8 +16,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'toba', --clase_proyecto
 	'toba_ei_formulario', --clase
 	'280000003', --punto_montaje
-	NULL, --subclase
-	NULL, --subclase_archivo
+	'form_carga_evaluacion', --subclase
+	'operaciones/propuestas/form_carga_evaluacion.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'fceCargar evaluador propuesta PIC (Pp-02) - form', --nombre
@@ -216,7 +216,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'280000789', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'ciclo_lectivo', --identificador
-	'ef_editable_numero', --elemento_formulario
+	'ef_editable', --elemento_formulario
 	'ciclo_lectivo', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio

@@ -27,8 +27,8 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion
-	'0', --menu
-	'12', --orden
+	'1', --menu
+	'5', --orden
 	'0', --solicitud_registrar
 	NULL, --solicitud_obs_tipo_proyecto
 	NULL, --solicitud_obs_tipo
@@ -60,7 +60,7 @@ INSERT INTO apex_item_objeto (item_id, proyecto, item, objeto, orden, inicializa
 	NULL, --item_id
 	'investigaciones', --proyecto
 	'280000178', --item
-	'280000660', --objeto
+	'280000805', --objeto
 	'0', --orden
 	NULL  --inicializar
 );
