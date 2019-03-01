@@ -1,18 +1,6 @@
 <?php
-class ci_cargar_evaluador_pic extends investigaciones_ci
+class ci_consultar extends investigaciones_ci
 { 
-    //-------------------------------------------------------------------------
-    function relacion()
-    {
-        return $this->controlador->dep('relacion');
-    }
-
-    //-------------------------------------------------------------------------
-    function tabla($id)
-    {
-        return $this->controlador->dep('relacion')->tabla($id);    
-    }
-
     //-----------------------------------------------------------------------------------
     //---- cuadro -----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
@@ -21,7 +9,7 @@ class ci_cargar_evaluador_pic extends investigaciones_ci
     {
         $where = $this->dep('filtro')->get_sql_where();
         $aux = array();
-        $where = $where . ' AND propuestas.estado = 1 AND propuestas.tipo = 1';
+        $where = $where . ' AND propuestas.tipo = 1';
         $datos = toba::consulta_php('co_propuestas')->get_propuestas($where);
         foreach ($datos as $dat) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['proponente']);
@@ -48,26 +36,6 @@ class ci_cargar_evaluador_pic extends investigaciones_ci
         $cuadro->set_datos($aux);
     }
 
-    function evt__cuadro__seleccion($seleccion)
-    {
-        $this->relacion()->cargar($seleccion);
-        $this->set_pantalla('edicion');
-    }    
-
-
-    function conf__form(investigaciones_ei_formulario $form)
-    {
-        if ($this->relacion()->esta_cargada()) {
-            $datos = $this->tabla('propuestas')->get();
-            $form->set_datos($datos);
-        }
-    }        
-
-    function evt__form__modificacion($datos)
-    {
-        $datos['estado'] = 2; // pasa a estado en evaluacion
-        $this->tabla('propuestas')->set($datos);
-    } 	
     //-----------------------------------------------------------------------------------
     //---- filtro -----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
@@ -87,21 +55,6 @@ class ci_cargar_evaluador_pic extends investigaciones_ci
     function evt__filtro__cancelar()
     {
         unset($this->s__filtro);
-}    
-    //-----------------------------------------------------------------------------------
-    //---- Eventos ----------------------------------------------------------------------
-    //-----------------------------------------------------------------------------------
+    }    
 
-    function evt__procesar()
-    {
-        $this->dep('relacion')->sincronizar();
-        $this->dep('relacion')->resetear();
-        $this->set_pantalla('seleccion');
-    }
-
-    function evt__cancelar()
-    {
-        $this->dep('relacion')->resetear();
-        $this->set_pantalla('seleccion');
-    }
 }
