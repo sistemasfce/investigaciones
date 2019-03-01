@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000179]--  Consultar propuestas 
+--[280000206]--  Eliminar propuesta 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -10,7 +10,7 @@
 INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre, carpeta, nivel_acceso, solicitud_tipo, pagina_tipo_proyecto, pagina_tipo, actividad_buffer_proyecto, actividad_buffer, actividad_patron_proyecto, actividad_patron, nombre, descripcion, punto_montaje, actividad_accion, menu, orden, solicitud_registrar, solicitud_obs_tipo_proyecto, solicitud_obs_tipo, solicitud_observacion, solicitud_registrar_cron, prueba_directorios, zona_proyecto, zona, zona_orden, zona_listar, imagen_recurso_origen, imagen, parametro_a, parametro_b, parametro_c, publico, redirecciona, usuario, exportable, creacion, retrasar_headers) VALUES (
 	NULL, --item_id
 	'investigaciones', --proyecto
-	'280000179', --item
+	'280000206', --item
 	NULL, --padre_id
 	'investigaciones', --padre_proyecto
 	'280000175', --padre
@@ -23,12 +23,12 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Consultar propuestas', --nombre
+	'Eliminar propuesta', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion
 	'1', --menu
-	'10', --orden
+	'7', --orden
 	'0', --solicitud_registrar
 	NULL, --solicitud_obs_tipo_proyecto
 	NULL, --solicitud_obs_tipo
@@ -48,7 +48,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --redirecciona
 	NULL, --usuario
 	'0', --exportable
-	'2018-09-20 10:58:12', --creacion
+	'2019-03-01 10:07:07', --creacion
 	'0'  --retrasar_headers
 );
 --- FIN Grupo de desarrollo 280
@@ -59,8 +59,8 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 INSERT INTO apex_item_objeto (item_id, proyecto, item, objeto, orden, inicializar) VALUES (
 	NULL, --item_id
 	'investigaciones', --proyecto
-	'280000179', --item
-	'280000806', --objeto
+	'280000206', --item
+	'280000813', --objeto
 	'0', --orden
 	NULL  --inicializar
 );
