@@ -48,6 +48,39 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, etiqueta, maneja_datos, sobre_fila, confirmacion, estilo, imagen_recurso_origen, imagen, en_botonera, ayuda, orden, ci_predep, implicito, defecto, display_datos_cargados, grupo, accion, accion_imphtml_debug, accion_vinculo_carpeta, accion_vinculo_item, accion_vinculo_objeto, accion_vinculo_popup, accion_vinculo_popup_param, accion_vinculo_target, accion_vinculo_celda, accion_vinculo_servicio, es_seleccion_multiple, es_autovinculo) VALUES (
 	'investigaciones', --proyecto
+	'280000760', --evento_id
+	'280000771', --objeto
+	'confirmar', --identificador
+	'C&onfirmar', --etiqueta
+	'1', --maneja_datos
+	NULL, --sobre_fila
+	NULL, --confirmacion
+	NULL, --estilo
+	'apex', --imagen_recurso_origen
+	'aplicar.png', --imagen
+	'1', --en_botonera
+	NULL, --ayuda
+	'1', --orden
+	NULL, --ci_predep
+	'0', --implicito
+	'0', --defecto
+	NULL, --display_datos_cargados
+	NULL, --grupo
+	NULL, --accion
+	'0', --accion_imphtml_debug
+	NULL, --accion_vinculo_carpeta
+	NULL, --accion_vinculo_item
+	NULL, --accion_vinculo_objeto
+	'0', --accion_vinculo_popup
+	NULL, --accion_vinculo_popup_param
+	NULL, --accion_vinculo_target
+	NULL, --accion_vinculo_celda
+	NULL, --accion_vinculo_servicio
+	'0', --es_seleccion_multiple
+	'0'  --es_autovinculo
+);
+INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, etiqueta, maneja_datos, sobre_fila, confirmacion, estilo, imagen_recurso_origen, imagen, en_botonera, ayuda, orden, ci_predep, implicito, defecto, display_datos_cargados, grupo, accion, accion_imphtml_debug, accion_vinculo_carpeta, accion_vinculo_item, accion_vinculo_objeto, accion_vinculo_popup, accion_vinculo_popup_param, accion_vinculo_target, accion_vinculo_celda, accion_vinculo_servicio, es_seleccion_multiple, es_autovinculo) VALUES (
+	'investigaciones', --proyecto
 	'280000709', --evento_id
 	'280000771', --objeto
 	'procesar', --identificador
@@ -60,7 +93,7 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 	'guardar.gif', --imagen
 	'1', --en_botonera
 	NULL, --ayuda
-	'1', --orden
+	'2', --orden
 	NULL, --ci_predep
 	'0', --implicito
 	'1', --defecto
@@ -93,7 +126,7 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 	'deshacer.png', --imagen
 	'1', --en_botonera
 	NULL, --ayuda
-	'2', --orden
+	'3', --orden
 	NULL, --ci_predep
 	'0', --implicito
 	'0', --defecto
@@ -221,5 +254,11 @@ INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VAL
 	'280000227', --pantalla
 	'280000771', --objeto_ci
 	'280000710', --evento_id
+	'investigaciones'  --proyecto
+);
+INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
+	'280000227', --pantalla
+	'280000771', --objeto_ci
+	'280000760', --evento_id
 	'investigaciones'  --proyecto
 );

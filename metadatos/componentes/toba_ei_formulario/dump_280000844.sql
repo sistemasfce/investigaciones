@@ -1098,7 +1098,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'proyecto_presentado', --identificador
 	'ef_checkbox', --elemento_formulario
 	'proyecto_presentado', --columnas
-	'0', --obligatorio
+	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'19', --orden
 	'Presentó proyecto', --etiqueta
@@ -1178,7 +1178,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'proyecto_fecha', --identificador
 	'ef_editable_fecha', --elemento_formulario
 	'proyecto_fecha', --columnas
-	'0', --obligatorio
+	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'20', --orden
 	'Fecha presentación', --etiqueta
@@ -1258,7 +1258,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'proyecto_numero', --identificador
 	'ef_editable', --elemento_formulario
 	'proyecto_numero', --columnas
-	'0', --obligatorio
+	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'21', --orden
 	'N° proyecto', --etiqueta

@@ -1098,7 +1098,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'evaluador_fecha_asig', --identificador
 	'ef_editable_fecha', --elemento_formulario
 	'evaluador_fecha_asig', --columnas
-	'0', --obligatorio
+	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'15', --orden
 	'fecha asignación', --etiqueta

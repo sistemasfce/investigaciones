@@ -19,6 +19,7 @@ class ci_propuestas extends investigaciones_ci
 
     function conf__form(investigaciones_ei_formulario $form)
     {
+        $datos = toba::memoria()->get_dato('datos');
         $form->set_datos($datos);
     }    
     
@@ -35,20 +36,35 @@ class ci_propuestas extends investigaciones_ci
 	}
         $datos['estado'] = 1;
         $this->tabla('propuestas')->set($datos);
+        toba::memoria()->set_dato('datos',$datos);
     }
 
     function evt__procesar()
     {
         try {
             $this->dep('relacion')->sincronizar();
-            $this->dep('relacion')->resetear();
-            $datos = toba::consulta_php('co_propuestas')->get_ultimo_numero();
-            toba::notificacion()->agregar('Propuesta registrada con N° '.$datos['numero'], 'info');
+            //$this->dep('relacion')->resetear();
+            $numero = toba::consulta_php('co_propuestas')->get_ultimo_numero();
+            toba::notificacion()->agregar('Propuesta registrada con N° '.$numero['numero'], 'info');
+            $datos = toba::memoria()->get_dato('datos');
+            $datos['numero'] = $numero['numero'];
+            $datos['ciclo_lectivo'] = $numero['ciclo_lectivo'];
+            toba::memoria()->set_dato('datos',$datos);
         }catch (toba_error $e) {
             toba::notificacion()->agregar('No se puede insertar el registro', 'error');
         }
     }
-
+    function evt__confirmar()
+    {
+        try {
+            $this->dep('relacion')->sincronizar();
+            $this->dep('relacion')->resetear();
+            $datos = array();
+            toba::memoria()->set_dato('datos',$datos);
+        }catch (toba_error $e) {
+            toba::notificacion()->agregar('No se puede insertar el registro', 'error');
+        }
+    }
     function evt__cancelar()
     {
         $this->dep('relacion')->resetear();

@@ -458,7 +458,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'evaluacion_fecha', --identificador
 	'ef_editable_fecha', --elemento_formulario
 	'evaluacion_fecha', --columnas
-	'0', --obligatorio
+	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'18', --orden
 	'Fecha evaluación', --etiqueta
@@ -1258,7 +1258,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'evaluador', --identificador
 	'ef_combo', --elemento_formulario
 	'evaluador', --columnas
-	'1', --obligatorio
+	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'14', --orden
 	'Evaluador', --etiqueta
@@ -1498,7 +1498,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'estado', --identificador
 	'ef_combo', --elemento_formulario
 	'estado', --columnas
-	'0', --obligatorio
+	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'17', --orden
 	'Estado evaluación', --etiqueta

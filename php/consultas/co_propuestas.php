@@ -4,7 +4,7 @@ class co_propuestas
 {
     function get_ultimo_numero()
     {
-        $sql = "SELECT numero FROM propuestas WHERE numero <> '' ORDER BY propuesta DESC LIMIT 1";
+        $sql = "SELECT numero, ciclo_lectivo FROM propuestas WHERE numero <> '' ORDER BY propuesta DESC LIMIT 1";
         return toba::db()->consultar_fila($sql);
     }   
 
