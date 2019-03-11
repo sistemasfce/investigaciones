@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000195]--  Cargar propuesta (Pan Pp-01) 
+--[280000195]--  Cargar propuesta PIC (Pan Pp-01) 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -13,7 +13,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	'280000195', --item
 	NULL, --padre_id
 	'investigaciones', --padre_proyecto
-	'280000175', --padre
+	'280000211', --padre
 	'0', --carpeta
 	'0', --nivel_acceso
 	'web', --solicitud_tipo
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Cargar propuesta (Pan Pp-01)', --nombre
+	'Cargar propuesta PIC (Pan Pp-01)', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion
