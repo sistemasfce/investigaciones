@@ -26,6 +26,8 @@ class ci_cargar_evaluacion_pic extends investigaciones_ci
         foreach ($datos as $dat) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['proponente']);
             $dat['nombre_completo'] = $nombre['nombre_completo'];
+            $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['evaluador']);
+            $dat['evaluador_nombre'] = $nombre['nombre_completo'];
             if (isset($dat['carrera'])) {
                 $nombre = toba::consulta_php('co_carreras')->get_carreras('carrera = '.$dat['carrera']);
                 $dat['carrera_desc'] = $nombre[0]['nombre'];     

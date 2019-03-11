@@ -21,7 +21,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'Cargar evaluador propuesta PIC (Pp-02) - form', --nombre
-	'Cargar evaluador propuesta PIC (Pp-03)', --titulo
+	'Cargar evaluador propuesta PIC (Pan Pp-03)', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	'investigaciones', --fuente_datos_proyecto
