@@ -13,6 +13,12 @@ class ci_propuestas extends investigaciones_ci
         return $this->controlador->dep('relacion')->tabla($id);    
     }
 
+    function fin()
+    {
+        $datos = array();
+        toba::memoria()->set_dato('datos',$datos);
+    }
+    
     //-----------------------------------------------------------------------------------
     //---- form -------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
@@ -43,13 +49,14 @@ class ci_propuestas extends investigaciones_ci
     {
         try {
             $this->dep('relacion')->sincronizar();
-            //$this->dep('relacion')->resetear();
             $numero = toba::consulta_php('co_propuestas')->get_ultimo_numero();
             toba::notificacion()->agregar('Propuesta registrada con N° '.$numero['numero'], 'info');
             $datos = toba::memoria()->get_dato('datos');
             $datos['numero'] = $numero['numero'];
             $datos['ciclo_lectivo'] = $numero['ciclo_lectivo'];
             toba::memoria()->set_dato('datos',$datos);
+            $this->evento('procesar')->ocultar();
+            $this->pantalla('pant_inicial')->agregar_evento('confirmar');
         }catch (toba_error $e) {
             toba::notificacion()->agregar('No se puede insertar el registro', 'error');
         }
@@ -57,18 +64,19 @@ class ci_propuestas extends investigaciones_ci
     function evt__confirmar()
     {
         try {
-            $this->dep('relacion')->sincronizar();
-            $this->dep('relacion')->resetear();
             $datos = array();
             toba::memoria()->set_dato('datos',$datos);
+            $this->dep('relacion')->sincronizar();
+            $this->dep('relacion')->resetear();
         }catch (toba_error $e) {
             toba::notificacion()->agregar('No se puede insertar el registro', 'error');
         }
     }
     function evt__cancelar()
     {
+        $datos = array();
+        toba::memoria()->set_dato('datos',$datos);
         $this->dep('relacion')->resetear();
-        
     }          
 
 }

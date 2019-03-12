@@ -57,7 +57,7 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 	NULL, --confirmacion
 	NULL, --estilo
 	'apex', --imagen_recurso_origen
-	'aplicar.png', --imagen
+	'favorito.png', --imagen
 	'1', --en_botonera
 	NULL, --ayuda
 	'1', --orden
@@ -254,11 +254,5 @@ INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VAL
 	'280000227', --pantalla
 	'280000771', --objeto_ci
 	'280000710', --evento_id
-	'investigaciones'  --proyecto
-);
-INSERT INTO apex_eventos_pantalla (pantalla, objeto_ci, evento_id, proyecto) VALUES (
-	'280000227', --pantalla
-	'280000771', --objeto_ci
-	'280000760', --evento_id
 	'investigaciones'  --proyecto
 );
