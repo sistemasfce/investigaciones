@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000206]--  Eliminar propuesta 
+--[280000206]--  Eliminar propuestas 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Eliminar propuesta', --nombre
+	'Eliminar propuestas', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion
