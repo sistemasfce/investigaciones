@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000212]--  Cargar presentación proyecto PIC (Pan Pp-07) 
+--[280000212]--  Cargar presentación proyecto PIC 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Cargar presentación proyecto PIC (Pan Pp-07)', --nombre
+	'Cargar presentación proyecto PIC', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion

@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000201]--  Cargar evaluación propuesta PIC (Pan Pp-05) 
+--[280000201]--  Cargar evaluación propuesta PIC 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Cargar evaluación propuesta PIC (Pan Pp-05)', --nombre
+	'Cargar evaluación propuesta PIC', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion

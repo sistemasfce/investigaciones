@@ -251,7 +251,7 @@ INSERT INTO apex_objeto_ei_filtro_col (objeto_ei_filtro_col, objeto_ei_filtro, o
 	'cadena', --tipo
 	'numero', --nombre
 	'numero', --expresion
-	'Número', --etiqueta
+	'Número de propuesta', --etiqueta
 	NULL, --descripcion
 	'0', --obligatorio
 	'1', --inicial
