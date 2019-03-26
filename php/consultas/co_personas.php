@@ -13,6 +13,48 @@ class co_personas
 	return toba::db('plantadb')->consultar($sql);
     }
 
+    function get_profesores($where='1=1')
+    {
+        $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
+		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
+                            LEFT OUTER JOIN asignaciones ON personas.persona = asignaciones.persona
+		WHERE $where
+                        AND designaciones.estado = 1 AND designaciones.categoria in (1,2,3)
+                        AND asignaciones.estado = 1 AND asignaciones.responsable = 'S'
+		ORDER BY nombre_completo
+        ";
+	return toba::db('plantadb')->consultar($sql);
+    }
+
+    function get_investigadores($where='1=1')
+    {
+        $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
+		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
+		WHERE $where
+                        AND designaciones.estado = 1 AND designaciones.categoria in (1,2,3)          
+		ORDER BY nombre_completo
+        ";
+	$datos = toba::db('plantadb')->consultar($sql);
+        
+        $where = '';
+        foreach ($datos as $dat)
+        {
+            $where.=$dat['persona'].',';
+        }
+        $where = trim($where, ',');
+        
+        $sql2 = "SELECT DISTINCT investigadores.persona, apellido || ', ' || nombres as nombre_completo
+                FROM investigadores 
+                        LEFT OUTER JOIN investigadores_categorias ON investigadores.investigador = investigadores_categorias.investigador
+                WHERE investigadores_categorias.resultado_categoria in (2,3,4)
+                        AND investigadores.persona in ($where)
+                ORDER BY nombre_completo
+                ";
+        return toba::db()->consultar($sql2);
+        
+        
+    }
+    
     function get_datos_persona($persona)
     {
         $sql = "SELECT *, 
