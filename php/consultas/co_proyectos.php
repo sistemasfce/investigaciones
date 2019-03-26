@@ -216,7 +216,7 @@ UNION
    
     function get_ultimo_numero()
     {
-        $sql = "SELECT numero FROM proyectos WHERE numero <> '' ORDER BY proyecto DESC LIMIT 1";
+        $sql = "SELECT numero FROM proyectos ORDER BY proyecto DESC LIMIT 1";
         return toba::db()->consultar_fila($sql);
     } 
 

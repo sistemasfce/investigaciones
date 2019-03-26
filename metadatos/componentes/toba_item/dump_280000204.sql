@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000204]--  Cargar proyecto (Py-01) 
+--[280000204]--  Cargar proyecto PIC 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -13,7 +13,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	'280000204', --item
 	NULL, --padre_id
 	'investigaciones', --padre_proyecto
-	'280000087', --padre
+	'280000227', --padre
 	'0', --carpeta
 	'0', --nivel_acceso
 	'web', --solicitud_tipo
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Cargar proyecto (Py-01)', --nombre
+	'Cargar proyecto PIC', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion
