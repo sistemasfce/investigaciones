@@ -227,7 +227,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000798', --objeto_cuadro
 	'280001260', --objeto_cuadro_col
-	'director_desc', --clave
+	'director_nombre', --clave
 	'5', --orden
 	'Director', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
@@ -444,7 +444,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000798', --objeto_cuadro
 	'280001476', --objeto_cuadro_col
-	'fecha_asignacion', --clave
+	'evaluacion_fecha', --clave
 	'11', --orden
 	'Fecha de asignación', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo

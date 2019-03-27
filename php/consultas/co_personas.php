@@ -26,7 +26,7 @@ class co_personas
 	return toba::db('plantadb')->consultar($sql);
     }
 
-    function get_investigadores($where='1=1')
+    function get_evaluadores($where='1=1')
     {
         $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
 		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
@@ -76,6 +76,6 @@ class co_personas
                 ORDER BY persona
         ";
 	return toba::db('plantadb')->consultar($sql);
-    }       
+    }        
 }
 ?>

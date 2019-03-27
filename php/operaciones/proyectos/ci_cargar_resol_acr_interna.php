@@ -21,8 +21,8 @@ class ci_cargar_resol_acr_interna extends investigaciones_ci
     {
         $where = $this->dep('filtro')->get_sql_where();
         $aux = array();
-        $where = $where . ' AND proyectos.proyecto_estado = 23 AND proyectos.tipo::Int = 1';
-        $datos = toba::consulta_php('co_proyectos')->get_proyectos($where);
+        $where = $where . ' AND proyectos_inv.estado = 23 AND proyectos_inv.tipo::Int = 1';
+        $datos = toba::consulta_php('co_proyectos_inv')->get_proyectos($where);
         $cuadro->set_datos($datos);
     }
 
@@ -36,14 +36,14 @@ class ci_cargar_resol_acr_interna extends investigaciones_ci
     function conf__form(investigaciones_ei_formulario $form)
     {
         if ($this->relacion()->esta_cargada()) {
-            $datos = $this->tabla('proyectos')->get();
+            $datos = $this->tabla('proyectos_inv')->get();
             $form->set_datos($datos);
         }
     }        
 
     function evt__form__modificacion($datos)
     {
-        $this->tabla('proyectos')->set($datos);
+        $this->tabla('proyectos_inv')->set($datos);
     } 	
     //-----------------------------------------------------------------------------------
     //---- filtro -----------------------------------------------------------------------

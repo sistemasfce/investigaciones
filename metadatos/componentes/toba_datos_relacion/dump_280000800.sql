@@ -65,10 +65,10 @@ INSERT INTO apex_objeto_datos_rel (proyecto, objeto, debug, clave, ap, punto_mon
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'investigaciones', --proyecto
-	'280000697', --dep_id
+	'280000765', --dep_id
 	'280000800', --objeto_consumidor
-	'280000393', --objeto_proveedor
-	'proyectos', --identificador
+	'280000873', --objeto_proveedor
+	'proyectos_inv', --identificador
 	'1', --parametros_a
 	'1', --parametros_b
 	NULL, --parametros_c
