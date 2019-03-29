@@ -25,6 +25,20 @@ class co_personas
         ";
 	return toba::db('plantadb')->consultar($sql);
     }
+    
+    function get_profesores_asignatura($ubicacion,$actividad)
+    {
+        $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
+		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
+                            LEFT OUTER JOIN asignaciones ON personas.persona = asignaciones.persona
+		WHERE designaciones.estado = 1 AND designaciones.categoria in (1,2,3)
+                        AND asignaciones.estado = 1 AND asignaciones.responsable = 'S'
+                        AND asignaciones.ubicacion = $ubicacion 
+                        AND  asignaciones.actividad = $actividad
+		ORDER BY nombre_completo
+        ";
+	return toba::db('plantadb')->consultar($sql);
+    }    
 
     function get_evaluadores($where='1=1')
     {

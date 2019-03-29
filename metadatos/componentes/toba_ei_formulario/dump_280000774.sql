@@ -300,7 +300,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'proponente', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'5', --orden
+	'10', --orden
 	'Proponente', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -314,7 +314,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --estado_defecto
 	'0', --solo_lectura
 	'0', --solo_lectura_modificacion
-	'get_profesores', --carga_metodo
+	'get_profesores_asignatura', --carga_metodo
 	NULL, --carga_clase
 	NULL, --carga_include
 	NULL, --carga_dt
@@ -324,7 +324,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --carga_lista
 	'persona', --carga_col_clave
 	'nombre_completo', --carga_col_desc
-	NULL, --carga_maestros
+	'ubicacion,asignatura', --carga_maestros
 	'0', --carga_cascada_relaj
 	'0', --cascada_mantiene_estado
 	'1', --carga_permite_no_seteado
@@ -380,7 +380,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'tipo', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'6', --orden
+	'5', --orden
 	'Propuesta de', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -460,7 +460,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'ubicacion', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'7', --orden
+	'6', --orden
 	'Sede/Delegación', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -540,7 +540,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'carrera', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'8', --orden
+	'7', --orden
 	'Carrera', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -620,7 +620,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'departamento', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'9', --orden
+	'8', --orden
 	'Departamento', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -700,7 +700,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'asignatura', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'10', --orden
+	'9', --orden
 	'Asignatura', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
