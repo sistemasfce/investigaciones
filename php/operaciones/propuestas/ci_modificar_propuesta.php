@@ -83,6 +83,7 @@ class ci_modificar_propuesta extends investigaciones_ci
         if (isset($datos['propuesta_archivo'])) {
             $nombre_archivo = $datos['propuesta_archivo']['name'];
             $nuevo = $datos['ciclo_lectivo'].'_'.$datos['entrada_numero'];
+            $nuevo = str_replace('/','_',$nuevo);
             $nombre_nuevo = 'PROPUESTA_'.$nuevo.'.pdf';   
             $destino = '/home/fce/informes_inv/'.$nombre_nuevo;
             move_uploaded_file($datos['propuesta_archivo']['tmp_name'], $destino);   
