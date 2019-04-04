@@ -42,29 +42,39 @@ class co_personas
 
     function get_evaluadores($where='1=1')
     {
-        $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
-		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
-		WHERE $where
-                        AND designaciones.estado = 1 AND designaciones.categoria in (1,2,3)          
-		ORDER BY nombre_completo
+        $sql = "
+            SELECT DISTINCT  
+                personas.persona, 
+                apellido || ', ' || nombres as nombre_completo
+            FROM 
+                personas 
+                LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
+                LEFT OUTER JOIN personas_categorias_inv ON personas.persona = personas_categorias_inv.persona
+            WHERE 
+                $where
+                AND designaciones.estado = 1 
+                AND designaciones.categoria in (1,2,3)
+                AND personas_categorias_inv.resultado_categoria in ('1 (uno)','2 (dos)','3 (tres)')
+            ORDER BY 
+                nombre_completo
         ";
-	$datos = toba::db('plantadb')->consultar($sql);
+	return toba::db('plantadb')->consultar($sql);
         
-        $where = '';
-        foreach ($datos as $dat)
-        {
-            $where.=$dat['persona'].',';
-        }
-        $where = trim($where, ',');
-        
-        $sql2 = "SELECT DISTINCT investigadores.persona, apellido || ', ' || nombres as nombre_completo
-                FROM investigadores 
-                        LEFT OUTER JOIN investigadores_categorias ON investigadores.investigador = investigadores_categorias.investigador
-                WHERE investigadores_categorias.resultado_categoria in (2,3,4)
-                        AND investigadores.persona in ($where)
-                ORDER BY nombre_completo
-                ";
-        return toba::db()->consultar($sql2);
+//        $where = '';
+//        foreach ($datos as $dat)
+//        {
+//            $where.=$dat['persona'].',';
+//        }
+//        $where = trim($where, ',');
+//        
+//        $sql2 = "SELECT DISTINCT investigadores.persona, apellido || ', ' || nombres as nombre_completo
+//                FROM investigadores 
+//                        LEFT OUTER JOIN investigadores_categorias ON investigadores.investigador = investigadores_categorias.investigador
+//                WHERE investigadores_categorias.resultado_categoria in (2,3,4)
+//                        AND investigadores.persona in ($where)
+//                ORDER BY nombre_completo
+//                ";
+//        return toba::db()->consultar($sql2);
         
         
     }
