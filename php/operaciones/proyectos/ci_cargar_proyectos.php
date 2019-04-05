@@ -39,13 +39,15 @@ class ci_cargar_proyectos extends investigaciones_ci
             $aux['apex_ei_analisis_fila'] = 'A';
             $alcance[] = $aux;
         }
-        $this->tabla('proyectos_inv_alcances_inv')->procesar_filas($alcance);
+        if (isset($alcance))
+            $this->tabla('proyectos_inv_alcances_inv')->procesar_filas($alcance);
         foreach ($datos['tipo_inv'] as $ti) {
             $aux['tipo'] = $ti;
             $aux['apex_ei_analisis_fila'] = 'A';
             $tipo[] = $aux;
         }
-        $this->tabla('proyectos_inv_tipos_inv')->procesar_filas($tipo);
+        if (isset($tipo))
+            $this->tabla('proyectos_inv_tipos_inv')->procesar_filas($tipo);
     }
     
     //-----------------------------------------------------------------------------------
@@ -54,15 +56,16 @@ class ci_cargar_proyectos extends investigaciones_ci
 
     function conf__form_ml_ue(investigaciones_ei_formulario_ml $form_ml)
     {
-//        if ($this->relacion()->esta_cargada()) {
-//            $datos = $this->tabla('investigadores_en_proyectos')->get_filas();
-//            $form_ml->set_datos($datos);
-//        }
+        if ($this->relacion()->esta_cargada()) {
+            $datos = $this->tabla('proyectos_inv_ue')->get_filas();
+            $form_ml->set_datos($datos);
+        }
     }
     
     function evt__form_ml_ue__modificacion($datos)
     {
-        //$this->tabla('investigadores_en_proyectos')->procesar_filas($datos);
+
+        $this->tabla('proyectos_inv_ue')->procesar_filas($datos);
     }   
 
     function evt__procesar()
