@@ -47,5 +47,16 @@ class co_proyectos_inv
     {
         $sql = "SELECT numero FROM proyectos_inv ORDER BY proyecto DESC LIMIT 1";
         return toba::db()->consultar_fila($sql);
+    }    
+    
+    function get_pic_pendientes_resol($where='1=1')
+    {
+        $sql = "SELECT *,
+                    ubicaciones.descripcion as ubicacion_desc,
+                    proyectos_estados.descripcion as estado_desc
+		FROM proyectos_inv LEFT OUTER JOIN ubicaciones ON proyectos_inv.ubicacion = ubicaciones.ubicacion
+                LEFT OUTER JOIN proyectos_estados ON proyectos_inv.estado = proyectos_estados.proyecto_estado
+                WHERE estado = 23 AND resol_fce_numero is null AND $where";
+        return toba::db()->consultar($sql);
     }     
 }
