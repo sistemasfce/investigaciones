@@ -20,7 +20,8 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
     function conf__cuadro(investigaciones_ei_cuadro $cuadro)
     {
         $where = $this->dep('filtro')->get_sql_where();
-        $datos = toba::consulta_php('co_proyectos_inv')->get_pic($where); 
+        $where.= 'AND proyectos_inv.tipo = 1';
+        $datos = toba::consulta_php('co_proyectos_inv')->get_proyectos($where); 
         $cuadro->set_datos($datos);
     } 
     
