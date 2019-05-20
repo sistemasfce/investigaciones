@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000885]--  fceCargar resolución de acreditación interna de proyecto (Pan Py-02) - cuadro 
+--[280000887]--  fcefceCargar resolución de acreditación interna de proyecto (Pan Py-02) - cuadro 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -9,7 +9,7 @@
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, clase_proyecto, clase, punto_montaje, subclase, subclase_archivo, objeto_categoria_proyecto, objeto_categoria, nombre, titulo, colapsable, descripcion, fuente_datos_proyecto, fuente_datos, solicitud_registrar, solicitud_obj_obs_tipo, solicitud_obj_observacion, parametro_a, parametro_b, parametro_c, parametro_d, parametro_e, parametro_f, usuario, creacion, posicion_botonera) VALUES (
 	'investigaciones', --proyecto
-	'280000885', --objeto
+	'280000887', --objeto
 	NULL, --anterior
 	NULL, --identificador
 	NULL, --reflexivo
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fceCargar resolución de acreditación interna de proyecto (Pan Py-02) - cuadro', --nombre
+	'fcefceCargar resolución de acreditación interna de proyecto (Pan Py-02) - cuadro', --nombre
 	'Reporte mensual de Proyectos PIC pendientes resolución de aprobación (Rep Py-01)', --titulo
 	'0', --colapsable
 	NULL, --descripcion
@@ -46,7 +46,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 ------------------------------------------------------------
 INSERT INTO apex_objeto_cuadro (objeto_cuadro_proyecto, objeto_cuadro, titulo, subtitulo, sql, columnas_clave, columna_descripcion, clave_dbr, archivos_callbacks, ancho, ordenar, paginar, tamano_pagina, tipo_paginado, mostrar_total_registros, eof_invisible, eof_customizado, siempre_con_titulo, exportar_paginado, exportar, exportar_rtf, pdf_propiedades, pdf_respetar_paginacion, asociacion_columnas, ev_seleccion, ev_eliminar, dao_nucleo_proyecto, dao_nucleo, dao_metodo, dao_parametros, desplegable, desplegable_activo, scroll, scroll_alto, cc_modo, cc_modo_anidado_colap, cc_modo_anidado_totcol, cc_modo_anidado_totcua) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
+	'280000887', --objeto_cuadro
 	NULL, --titulo
 	NULL, --subtitulo
 	NULL, --sql
@@ -92,8 +92,8 @@ INSERT INTO apex_objeto_cuadro (objeto_cuadro_proyecto, objeto_cuadro, titulo, s
 --- INICIO Grupo de desarrollo 280
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001499', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001511', --objeto_cuadro_col
 	'numero', --clave
 	'1', --orden
 	'N° de proyecto', --titulo
@@ -123,8 +123,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001500', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001512', --objeto_cuadro_col
 	'ciclo_lectivo', --clave
 	'2', --orden
 	'Ciclo lectivo', --titulo
@@ -154,8 +154,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001501', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001513', --objeto_cuadro_col
 	'ubicacion_desc', --clave
 	'6', --orden
 	'Sede/Delegación', --titulo
@@ -185,8 +185,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001502', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001514', --objeto_cuadro_col
 	'director_nombre', --clave
 	'5', --orden
 	'Director', --titulo
@@ -216,8 +216,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001503', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001515', --objeto_cuadro_col
 	'carrera_desc', --clave
 	'7', --orden
 	'Carrera', --titulo
@@ -247,8 +247,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001504', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001516', --objeto_cuadro_col
 	'departamento_desc', --clave
 	'8', --orden
 	'Depto', --titulo
@@ -278,8 +278,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001505', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001517', --objeto_cuadro_col
 	'evaluacion_fecha', --clave
 	'11', --orden
 	'Fecha de asignación', --titulo
@@ -309,8 +309,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001506', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001518', --objeto_cuadro_col
 	'asignatura_desc', --clave
 	'9', --orden
 	'Asignatura', --titulo
@@ -340,8 +340,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001507', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001519', --objeto_cuadro_col
 	'evaluador_nombre', --clave
 	'10', --orden
 	'Evaluador', --titulo
@@ -371,8 +371,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001508', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001520', --objeto_cuadro_col
 	'estado_desc', --clave
 	'12', --orden
 	'Estado', --titulo
@@ -402,8 +402,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001509', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001521', --objeto_cuadro_col
 	'entrada_numero', --clave
 	'3', --orden
 	'N° de entrada', --titulo
@@ -433,8 +433,8 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 );
 INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro, objeto_cuadro_col, clave, orden, titulo, estilo_titulo, estilo, ancho, formateo, vinculo_indice, no_ordenar, mostrar_xls, mostrar_pdf, pdf_propiedades, desabilitado, total, total_cc, usar_vinculo, vinculo_carpeta, vinculo_item, vinculo_popup, vinculo_popup_param, vinculo_target, vinculo_celda, vinculo_servicio, permitir_html, grupo, evento_asociado) VALUES (
 	'investigaciones', --objeto_cuadro_proyecto
-	'280000885', --objeto_cuadro
-	'280001510', --objeto_cuadro_col
+	'280000887', --objeto_cuadro
+	'280001522', --objeto_cuadro_col
 	'entrada_fecha', --clave
 	'4', --orden
 	'Fecha entrada', --titulo

@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000110]--  ABM Proyectos 
+--[280000110]--  ABM Proyectos (sistema anterior) 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'ABM Proyectos', --nombre
+	'ABM Proyectos (sistema anterior)', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion
