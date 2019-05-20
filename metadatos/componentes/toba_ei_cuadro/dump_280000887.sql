@@ -21,7 +21,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'fcefceCargar resolución de acreditación interna de proyecto (Pan Py-02) - cuadro', --nombre
-	'Reporte mensual de Proyectos PIC pendientes resolución de aprobación (Rep Py-01)', --titulo
+	'Reporte de Proyectos PIC', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	NULL, --fuente_datos_proyecto

@@ -16,8 +16,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'toba', --clase_proyecto
 	'toba_ci', --clase
 	'280000003', --punto_montaje
-	'ci_reporte_mensual_pic', --subclase
-	'operaciones/proyectos/ci_reporte_mensual_pic.php', --subclase_archivo
+	'ci_reporte_proyectos_pic', --subclase
+	'operaciones/proyectos/ci_reporte_proyectos_pic.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'fceReporte mensual de Proyectos PIC pendientes resolución de aprobación', --nombre
