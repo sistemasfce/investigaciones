@@ -540,7 +540,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'proponente', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'5', --orden
+	'11', --orden
 	'Proponente', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -620,7 +620,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'tipo', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'6', --orden
+	'5', --orden
 	'Tipo', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -700,7 +700,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'ubicacion', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'7', --orden
+	'6', --orden
 	'Sede/Delegación', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -780,7 +780,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'carrera', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'8', --orden
+	'7', --orden
 	'Carrera', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -860,7 +860,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'departamento', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'9', --orden
+	'8', --orden
 	'Departamento', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -940,7 +940,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'asignatura', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'10', --orden
+	'9', --orden
 	'Asignatura', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -1020,7 +1020,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'ambito', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'11', --orden
+	'10', --orden
 	'Ambito', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
