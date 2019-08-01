@@ -30,7 +30,7 @@ class form_carga extends investigaciones_ei_formulario
                         this.ef('ubicacion').mostrar();
                         this.ef('incentivo').mostrar();
                         this.ef('carrera').ocultar();
-                        this.ef('departamento').ocultar();
+                        this.ef('departamento').mostrar();
                         this.ef('asignatura').ocultar();
                         this.ef('ambito').ocultar();
                     } else {
@@ -68,7 +68,7 @@ class form_carga extends investigaciones_ei_formulario
                 this.ef('ubicacion').mostrar();
                 this.ef('incentivo').mostrar();
                 this.ef('carrera').ocultar();
-                this.ef('departamento').ocultar();
+                this.ef('departamento').mostrar();
                 this.ef('asignatura').ocultar();
                 this.ef('ambito').ocultar();
             }

@@ -245,12 +245,6 @@ INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, i
 	'investigaciones', --proyecto
 	'admin', --usuario_grupo_acc
 	NULL, --item_id
-	'280000213'  --item
-);
-INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
-	'investigaciones', --proyecto
-	'admin', --usuario_grupo_acc
-	NULL, --item_id
 	'280000214'  --item
 );
 INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
@@ -294,5 +288,35 @@ INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, i
 	'admin', --usuario_grupo_acc
 	NULL, --item_id
 	'280000234'  --item
+);
+INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
+	'investigaciones', --proyecto
+	'admin', --usuario_grupo_acc
+	NULL, --item_id
+	'280000238'  --item
+);
+INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
+	'investigaciones', --proyecto
+	'admin', --usuario_grupo_acc
+	NULL, --item_id
+	'280000239'  --item
+);
+INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
+	'investigaciones', --proyecto
+	'admin', --usuario_grupo_acc
+	NULL, --item_id
+	'280000240'  --item
+);
+INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
+	'investigaciones', --proyecto
+	'admin', --usuario_grupo_acc
+	NULL, --item_id
+	'280000241'  --item
+);
+INSERT INTO apex_usuario_grupo_acc_item (proyecto, usuario_grupo_acc, item_id, item) VALUES (
+	'investigaciones', --proyecto
+	'admin', --usuario_grupo_acc
+	NULL, --item_id
+	'280000242'  --item
 );
 --- FIN Grupo de desarrollo 280

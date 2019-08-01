@@ -39,7 +39,33 @@ class co_personas
         ";
 	return toba::db('plantadb')->consultar($sql);
     }    
+    
+    function get_proponente_pii($ubicacion)
+    {
+        $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
+		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
+                            
+		WHERE designaciones.estado = 1 AND designaciones.categoria in (1,2,3,4)
+                        AND designaciones.ubicacion = $ubicacion 
+                       
+		ORDER BY nombre_completo
+        ";
+	return toba::db('plantadb')->consultar($sql);
+    }
 
+    function get_proponente_pi($ubicacion)
+    {
+        $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
+		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
+                            
+		WHERE designaciones.estado = 1 AND designaciones.categoria in (1,2,3)
+                        AND designaciones.ubicacion = $ubicacion 
+                       
+		ORDER BY nombre_completo
+        ";
+	return toba::db('plantadb')->consultar($sql);
+    }
+    
     function get_evaluadores($where='1=1')
     {
         $sql = "
