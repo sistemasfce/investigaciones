@@ -44,9 +44,9 @@ class co_personas
     {
         $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
 		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
-                            
+                      LEFT OUTER JOIN asignaciones ON personas.persona = asignaciones.persona      
 		WHERE designaciones.estado = 1 AND designaciones.categoria in (1,2,3,4)
-                        AND designaciones.ubicacion = $ubicacion 
+                        AND asignaciones.ubicacion = $ubicacion 
                        
 		ORDER BY nombre_completo
         ";
@@ -57,9 +57,9 @@ class co_personas
     {
         $sql = "SELECT DISTINCT  personas.persona, apellido || ', ' || nombres as nombre_completo
 		FROM personas LEFT OUTER JOIN designaciones ON personas.persona = designaciones.persona
-                            
+                            LEFT OUTER JOIN asignaciones ON personas.persona = asignaciones.persona 
 		WHERE designaciones.estado = 1 AND designaciones.categoria in (1,2,3)
-                        AND designaciones.ubicacion = $ubicacion 
+                        AND asignaciones.ubicacion = $ubicacion 
                        
 		ORDER BY nombre_completo
         ";
