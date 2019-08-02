@@ -1,5 +1,5 @@
 <?php
-class ci_cargar_evaluador_pii extends investigaciones_ci
+class ci_cargar_evaluacion extends investigaciones_ci
 { 
     //-------------------------------------------------------------------------
     function relacion()
@@ -21,11 +21,22 @@ class ci_cargar_evaluador_pii extends investigaciones_ci
     {
         $where = $this->dep('filtro')->get_sql_where();
         $aux = array();
-        $where = $where . ' AND propuestas.estado = 1 AND propuestas.tipo = 2';
+        $tipo = $cuadro->get_parametro('a');
+        $where = $where . ' AND propuestas.estado = 2 AND propuestas.tipo = '.$tipo;
         $datos = toba::consulta_php('co_propuestas')->get_propuestas($where);
         foreach ($datos as $dat) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['proponente']);
-            $dat['nombre_completo'] = $nombre['nombre_completo']; 
+            $dat['nombre_completo'] = $nombre['nombre_completo'];
+            $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['evaluador']);
+            $dat['evaluador_nombre'] = $nombre['nombre_completo'];
+            if (isset($dat['carrera'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_carreras('carrera = '.$dat['carrera']);
+                $dat['carrera_desc'] = $nombre[0]['nombre'];     
+            }
+            if (isset($dat['departamento'])) {
+                $nombre = toba::consulta_php('co_carreras')->get_departamentos('departamento = '.$dat['departamento']);
+                $dat['departamento_desc'] = $nombre[0]['descripcion'];     
+            }    
             if (isset($dat['asignatura'])) {
                 $nombre = toba::consulta_php('co_carreras')->get_asignaturas('actividad = '.$dat['asignatura']);
                 $dat['asignatura_desc'] = $nombre[0]['descripcion'];     
@@ -33,11 +44,11 @@ class ci_cargar_evaluador_pii extends investigaciones_ci
             if (isset($dat['ambito'])) {
                 $nombre = toba::consulta_php('co_carreras')->get_ambitos('ambito = '.$dat['ambito']);
                 $dat['ambito_desc'] = $nombre[0]['descripcion'];     
-            }             
+            }            
             $aux[] = $dat;
         }
-        //$datos_ordenados = rs_ordenar_por_columna($aux, 'numero');
-        $cuadro->set_datos($aux);
+        $datos_ordenados = rs_ordenar_por_columna($aux, 'numero');
+        $cuadro->set_datos($datos_ordenados);
     }
 
     function evt__cuadro__seleccion($seleccion)
@@ -57,7 +68,7 @@ class ci_cargar_evaluador_pii extends investigaciones_ci
 
     function evt__form__modificacion($datos)
     {
-        $datos['estado'] = 2; // pasa a estado en evaluacion
+        $datos['evaluacion'] = $datos['estado']; 
         $this->tabla('propuestas')->set($datos);
     } 	
     //-----------------------------------------------------------------------------------

@@ -16,8 +16,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'toba', --clase_proyecto
 	'toba_ci', --clase
 	'280000003', --punto_montaje
-	'ci_cargar_evaluador_pii', --subclase
-	'operaciones/propuestas/ci_cargar_evaluador_pii.php', --subclase_archivo
+	'ci_cargar_evaluador', --subclase
+	'operaciones/propuestas/ci_cargar_evaluador.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'fceCargar evaluador propuesta PIC (Pp-02)', --nombre

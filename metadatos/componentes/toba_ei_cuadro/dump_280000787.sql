@@ -29,7 +29,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --solicitud_registrar
 	NULL, --solicitud_obj_obs_tipo
 	NULL, --solicitud_obj_observacion
-	NULL, --parametro_a
+	'1', --parametro_a
 	NULL, --parametro_b
 	NULL, --parametro_c
 	NULL, --parametro_d
@@ -135,7 +135,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280000787', --objeto_cuadro
 	'280001244', --objeto_cuadro_col
 	'tipo_desc', --clave
-	'6', --orden
+	'5', --orden
 	'Tipo', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'0', --estilo
@@ -166,7 +166,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280000787', --objeto_cuadro
 	'280001245', --objeto_cuadro_col
 	'nombre_completo', --clave
-	'5', --orden
+	'10', --orden
 	'Proponente', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'0', --estilo
@@ -228,7 +228,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280000787', --objeto_cuadro
 	'280001247', --objeto_cuadro_col
 	'ubicacion_desc', --clave
-	'7', --orden
+	'6', --orden
 	'Sede/Delegación', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'0', --estilo
@@ -259,7 +259,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280000787', --objeto_cuadro
 	'280001248', --objeto_cuadro_col
 	'carrera_desc', --clave
-	'8', --orden
+	'7', --orden
 	'Carrera', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'0', --estilo
@@ -290,7 +290,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280000787', --objeto_cuadro
 	'280001249', --objeto_cuadro_col
 	'departamento_desc', --clave
-	'9', --orden
+	'8', --orden
 	'Departamento', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'0', --estilo
@@ -321,7 +321,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280000787', --objeto_cuadro
 	'280001250', --objeto_cuadro_col
 	'asignatura_desc', --clave
-	'10', --orden
+	'9', --orden
 	'Asignatura', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'0', --estilo
@@ -384,7 +384,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280001254', --objeto_cuadro_col
 	'entrada_fecha', --clave
 	'4', --orden
-	'Fecha entrada', --titulo
+	'Fecha de entrada', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'4', --estilo
 	NULL, --ancho
@@ -415,7 +415,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280001255', --objeto_cuadro_col
 	'numero', --clave
 	'1', --orden
-	'Número', --titulo
+	'N° de propuesta', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'col-cen-s1', --estilo
 	NULL, --ancho
@@ -446,7 +446,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'280001256', --objeto_cuadro_col
 	'entrada_numero', --clave
 	'3', --orden
-	'N° Entrada', --titulo
+	'N° de entrada', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
 	'col-cen-s1', --estilo
 	NULL, --ancho

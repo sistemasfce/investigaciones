@@ -9,7 +9,8 @@ class ci_consultar extends investigaciones_ci
     {
         $where = $this->dep('filtro')->get_sql_where();
         $aux = array();
-        //$where = $where . ' AND propuestas.tipo = 1';
+        $tipo = $cuadro->get_parametro('a');
+        $where = $where . ' AND propuestas.tipo = '.$tipo;
         $datos = toba::consulta_php('co_propuestas')->get_propuestas($where);
         foreach ($datos as $dat) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['proponente']);

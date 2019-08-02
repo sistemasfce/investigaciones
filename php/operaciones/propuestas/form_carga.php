@@ -16,7 +16,6 @@ class form_carga extends investigaciones_ei_formulario
                 this.ef('departamento').mostrar();
                 this.ef('asignatura').mostrar();
                 this.ef('ambito').ocultar();
-                this.ef('incentivo').ocultar();
             } else {
                 if (this.ef('tipo').get_estado() == 2) {
                     this.ef('ubicacion').mostrar();  
@@ -24,11 +23,9 @@ class form_carga extends investigaciones_ei_formulario
                     this.ef('carrera').ocultar();
                     this.ef('departamento').ocultar();
                     this.ef('asignatura').ocultar();
-                    this.ef('incentivo').ocultar();
                 } else {
                     if (this.ef('tipo').get_estado() == 3) {    
                         this.ef('ubicacion').mostrar();
-                        this.ef('incentivo').mostrar();
                         this.ef('carrera').ocultar();
                         this.ef('departamento').mostrar();
                         this.ef('asignatura').ocultar();
@@ -39,7 +36,6 @@ class form_carga extends investigaciones_ei_formulario
                         this.ef('departamento').ocultar();
                         this.ef('asignatura').ocultar();
                         this.ef('ambito').ocultar();
-                        this.ef('incentivo').ocultar();
                     }
                 }
             }
@@ -54,7 +50,6 @@ class form_carga extends investigaciones_ei_formulario
                 this.ef('departamento').mostrar();
                 this.ef('asignatura').mostrar();
                 this.ef('ambito').ocultar();
-                this.ef('incentivo').ocultar();
             }
             if (this.ef('tipo').get_estado() == 2) {
                 this.ef('ubicacion').mostrar();  
@@ -62,11 +57,9 @@ class form_carga extends investigaciones_ei_formulario
                 this.ef('carrera').ocultar();
                 this.ef('departamento').ocultar();
                 this.ef('asignatura').ocultar();
-                this.ef('incentivo').ocultar();
             }
             if (this.ef('tipo').get_estado() == 3) {    
                 this.ef('ubicacion').mostrar();
-                this.ef('incentivo').mostrar();
                 this.ef('carrera').ocultar();
                 this.ef('departamento').mostrar();
                 this.ef('asignatura').ocultar();

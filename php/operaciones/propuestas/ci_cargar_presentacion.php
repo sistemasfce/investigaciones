@@ -1,5 +1,5 @@
 <?php
-class ci_cargar_evaluacion_pic extends investigaciones_ci
+class ci_cargar_presentacion extends investigaciones_ci
 { 
     //-------------------------------------------------------------------------
     function relacion()
@@ -21,7 +21,8 @@ class ci_cargar_evaluacion_pic extends investigaciones_ci
     {
         $where = $this->dep('filtro')->get_sql_where();
         $aux = array();
-        $where = $where . ' AND propuestas.estado = 2 AND propuestas.tipo = 1';
+        $tipo = $cuadro->get_parametro('a');
+        $where = $where . ' AND propuestas.estado in (3) AND propuestas.tipo = '.$tipo;
         $datos = toba::consulta_php('co_propuestas')->get_propuestas($where);
         foreach ($datos as $dat) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['proponente']);
@@ -67,7 +68,7 @@ class ci_cargar_evaluacion_pic extends investigaciones_ci
 
     function evt__form__modificacion($datos)
     {
-        $datos['evaluacion'] = $datos['estado']; 
+        $datos['estado'] = 6; // pasa a estado proy_presentado
         $this->tabla('propuestas')->set($datos);
     } 	
     //-----------------------------------------------------------------------------------
