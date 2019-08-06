@@ -151,24 +151,6 @@ class co_propuestas
                 GROUP BY ubicacion_desc) as c6 ON c1.ubicacion_desc = c6.ubicacion_desc
         ";
         return toba::db()->consultar($sql);
-    }   
-    
-    function get_pic_pendientes()
-    {
-        $sql = "SELECT numero, 
-                    ciclo_lectivo, 
-                    entrada_numero,
-                    entrada_fecha,
-                    departamento,
-                    proponente,
-                    carrera,
-                    asignatura,
-                    ambito,
-                    ubicaciones.descripcion as ubicacion_desc
-                FROM propuestas LEFT OUTER JOIN ubicaciones ON propuestas.ubicacion = ubicaciones.ubicacion
-                WHERE estado = 1 AND tipo = 1 
-                ";
-        return toba::db()->consultar($sql);
-    }    
+    }       
 }
 ?>
