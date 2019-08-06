@@ -112,7 +112,7 @@ INSERT INTO apex_objeto_cuadro_cc (objeto_cuadro_proyecto, objeto_cuadro, objeto
 	'ubicacion_desc', --identificador
 	'Ubicación', --descripcion
 	'1', --orden
-	'ubicacion', --columnas_id
+	'ubicacion_desc', --columnas_id
 	'ubicacion_desc', --columnas_descripcion
 	'1', --pie_contar_filas
 	'0', --pie_mostrar_titular
