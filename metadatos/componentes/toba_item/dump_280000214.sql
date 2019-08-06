@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000214]--  Propuestas pendientes de asignar evaluador 
+--[280000214]--  Propuestas PIC pendientes de asignar evaluador 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Propuestas pendientes de asignar evaluador', --nombre
+	'Propuestas PIC pendientes de asignar evaluador', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion

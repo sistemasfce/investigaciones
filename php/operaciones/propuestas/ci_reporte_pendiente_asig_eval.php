@@ -19,6 +19,7 @@ class ci_reporte_pendiente_asig_eval extends investigaciones_ci
 
     function conf__cuadro_departamento(investigaciones_ei_cuadro $cuadro)
     {
+        $aux = array();
         $tipo = $cuadro->get_parametro('a');
         $estado = $cuadro->get_parametro('b');
         $where = ' propuestas.estado = '.$estado.' AND propuestas.tipo = '.$tipo;

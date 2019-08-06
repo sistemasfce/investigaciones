@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000215]--  Propuestas pendientes de evaluar 
+--[280000215]--  Propuestas PIC pendientes de evaluar 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -23,7 +23,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Propuestas pendientes de evaluar', --nombre
+	'Propuestas PIC pendientes de evaluar', --nombre
 	NULL, --descripcion
 	'280000003', --punto_montaje
 	NULL, --actividad_accion
