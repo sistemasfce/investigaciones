@@ -38,6 +38,18 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
     {
         if ($this->relacion()->esta_cargada()) {
             $datos = $this->tabla('proyectos_inv')->get();
+            
+            if ($datos['proyecto_path'] != '') {
+                // el 23 es para que corte la cadena despues del caracter 19, de /home/fce/informes_inv/
+                $nombre = substr($datos['proyecto_path'],23);
+                $dir_tmp = toba::proyecto()->get_www_temp();
+                exec("cp '". $datos['proyecto_path']. "' '" .$dir_tmp['path']."/".$nombre."'");
+                $temp_archivo = toba::proyecto()->get_www_temp($nombre);
+                $tamanio = round(filesize($temp_archivo['path']) / 1024);
+                $datos['proyecto_path_v'] = "<a href='{$temp_archivo['url']}'target='_blank'>Descargar archivo</a>";
+                $datos['proyecto_archivo'] = $nombre. ' - Tam.: '.$tamanio. ' KB';  
+            }
+            
             $form->set_datos($datos);
         }
     }    
@@ -47,6 +59,7 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
         if (isset($datos['proyecto_archivo'])) {
             $nombre_archivo = $datos['proyecto_archivo']['name'];
             $nuevo = $datos['ciclo_lectivo'].'_'.$datos['entrada_numero'];
+            $nuevo = $this->sanear_string($nuevo);
             $nombre_nuevo = 'PROYECTO_'.$nuevo.'.pdf';   
             $destino = '/home/fce/informes_inv/'.$nombre_nuevo;
             move_uploaded_file($datos['proyecto_archivo']['tmp_name'], $destino);   
@@ -124,5 +137,43 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
     function evt__filtro__cancelar()
     {
         unset($this->s__filtro);
-    }        
+    }   
+    
+    function sanear_string($string)
+    {
+        $string = trim($string);
+        $string = str_replace(
+                                        array('á', 'Á'),
+                                        array('a', 'A'),
+                                        $string);
+        $string = str_replace(
+                                        array('é', 'É'),
+                                        array('e', 'E'),
+                                        $string);
+        $string = str_replace(
+                                        array('í', 'Í'),
+                                        array('i', 'I'),
+                                        $string);
+        $string = str_replace(
+                                        array('ó', 'Ó'),
+                                        array('o', 'O'),
+                                        $string);
+        $string = str_replace(
+                                        array('ú', 'Ú', 'ü', 'Ü'),
+                                        array('u', 'U', 'u', 'U'),
+                                        $string);
+        $string = str_replace(
+                                        array('ñ', 'Ñ'),
+                                        array('n', 'N'),
+                                        $string);
+
+        //Esta parte se encarga de eliminar cualquier caracter extraÃ±o
+        $string = str_replace(
+                                        array("/","(", ")", "?", "Â¿", ";", ",", ":","."),'',
+                                        $string);
+
+        // reemplazo los espacios por guion bajo
+        $string = str_replace(' ','_',$string);
+        return $string;
+    }    
 }

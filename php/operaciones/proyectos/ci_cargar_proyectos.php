@@ -27,6 +27,7 @@ class ci_cargar_proyectos extends investigaciones_ci
         if (isset($datos['proyecto_archivo'])) {
             $nombre_archivo = $datos['proyecto_archivo']['name'];
             $nuevo = $datos['ciclo_lectivo'].'_'.$datos['entrada_numero'];
+            $nuevo = $this->sanear_string($nuevo);
             $nombre_nuevo = 'PROYECTO_'.$nuevo.'.pdf';   
             $destino = '/home/fce/informes_inv/'.$nombre_nuevo;
             move_uploaded_file($datos['proyecto_archivo']['tmp_name'], $destino);   
@@ -83,7 +84,44 @@ class ci_cargar_proyectos extends investigaciones_ci
     function evt__cancelar()
     {
         $this->dep('relacion')->resetear();
-    }          
+    }  
+    
+    function sanear_string($string)
+    {
+        $string = trim($string);
+        $string = str_replace(
+                                        array('á', 'Á'),
+                                        array('a', 'A'),
+                                        $string);
+        $string = str_replace(
+                                        array('é', 'É'),
+                                        array('e', 'E'),
+                                        $string);
+        $string = str_replace(
+                                        array('í', 'Í'),
+                                        array('i', 'I'),
+                                        $string);
+        $string = str_replace(
+                                        array('ó', 'Ó'),
+                                        array('o', 'O'),
+                                        $string);
+        $string = str_replace(
+                                        array('ú', 'Ú', 'ü', 'Ü'),
+                                        array('u', 'U', 'u', 'U'),
+                                        $string);
+        $string = str_replace(
+                                        array('ñ', 'Ñ'),
+                                        array('n', 'N'),
+                                        $string);
 
+        //Esta parte se encarga de eliminar cualquier caracter extraÃ±o
+        $string = str_replace(
+                                        array("/","(", ")", "?", "Â¿", ";", ",", ":","."),'',
+                                        $string);
+
+        // reemplazo los espacios por guion bajo
+        $string = str_replace(' ','_',$string);
+        return $string;
+    }
 }
 ?>
