@@ -49,6 +49,17 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
                 $datos['proyecto_path_v'] = "<a href='{$temp_archivo['url']}'target='_blank'>Descargar archivo</a>";
                 $datos['proyecto_archivo'] = $nombre. ' - Tam.: '.$tamanio. ' KB';  
             }
+
+            $alcances = $this->tabla('proyectos_inv_alcances_inv')->get_filas();
+            $tipos = $this->tabla('proyectos_inv_tipos_inv')->get_filas();
+            foreach ($tipos as $ti) {
+                $array_tipo[] = $ti['tipo'];
+            }
+            foreach ($alcances as $al) {
+                $array_alcance[] = $al['alcance'];
+            }
+            $datos['tipo_inv'] = $array_tipo;
+            $datos['alcance'] = $array_alcance;
             
             $form->set_datos($datos);
         }

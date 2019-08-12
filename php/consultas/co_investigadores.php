@@ -67,7 +67,7 @@ class co_investigadores
 	return toba::db()->consultar($sql);
     }
 
-    function get_evaluadores($where='1=1')
+    function NO_USAR_get_evaluadores($where='1=1')
     {
 	$sql = "SELECT evaluadores.*
 		FROM evaluadores
