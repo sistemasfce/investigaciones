@@ -18,26 +18,36 @@ class co_proyectos_inv
             if (isset($proy['director'])) {
                 $nombre = toba::consulta_php('co_personas')->get_datos_persona($proy['director']);
                 $proy['director_nombre'] = $nombre['nombre_completo'];
+            } else {
+                $proy['director_nombre'] = '';
             }
             if (isset($proy['evaluador'])) {
                 $nombre = toba::consulta_php('co_personas')->get_datos_persona($proy['evaluador']);
                 $proy['evaluador_nombre'] = $nombre['nombre_completo'];
-            }     
+            } else {
+                $proy['evaluador_nombre'] = '';
+            }    
             if (isset($proy['carrera'])) {
                 $where = 'carrera = '.$proy['carrera'];
                 $nombre = toba::consulta_php('co_carreras')->get_carreras($where);
                 $proy['carrera_desc'] = $nombre[0]['nombre'];
-            }  
+            } else {
+                $proy['carrera_desc'] = '';
+            }
             if (isset($proy['departamento'])) {
                 $where = 'departamento = '.$proy['departamento'];
                 $nombre = toba::consulta_php('co_carreras')->get_departamentos($where);
                 $proy['departamento_desc'] = $nombre[0]['descripcion'];
-            }  
+            } else {
+                $proy['departamento_desc'] = '';
+            } 
             if (isset($proy['asignatura'])) {
                 $where = 'actividad = '.$proy['asignatura'];
                 $nombre = toba::consulta_php('co_carreras')->get_asignaturas($where);
                 $proy['asignatura_desc'] = $nombre[0]['descripcion'];
-            }  
+            } else {
+                $proy['asignatura_desc'] = '';
+            } 
             $total[] = $proy;
         }
         return $total;
