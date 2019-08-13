@@ -669,7 +669,7 @@ INSERT INTO apex_objeto_ei_filtro_col (objeto_ei_filtro_col, objeto_ei_filtro, o
 	NULL, --carga_clase
 	NULL, --carga_include
 	NULL, --carga_dt
-	'280000025', --carga_consulta_php
+	'280000012', --carga_consulta_php
 	NULL, --carga_sql
 	'investigaciones', --carga_fuente
 	NULL, --carga_lista
