@@ -10,7 +10,7 @@ class co_proyectos_inv
 		FROM proyectos_inv LEFT OUTER JOIN ubicaciones ON proyectos_inv.ubicacion = ubicaciones.ubicacion
                 LEFT OUTER JOIN proyectos_estados ON proyectos_inv.estado = proyectos_estados.proyecto_estado
                 WHERE $where
-		ORDER BY numero
+		ORDER BY ciclo_lectivo DESC, numero::Int
         ";
 	$proyectos = toba::db()->consultar($sql);
         
