@@ -183,6 +183,18 @@ INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objet
 );
 INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
 	'investigaciones', --proyecto
+	'280000857', --dep_id
+	'280000793', --objeto_consumidor
+	'280000979', --objeto_proveedor
+	'form_ml', --identificador
+	NULL, --parametros_a
+	NULL, --parametros_b
+	NULL, --parametros_c
+	NULL, --inicializar
+	NULL  --orden
+);
+INSERT INTO apex_objeto_dependencias (proyecto, dep_id, objeto_consumidor, objeto_proveedor, identificador, parametros_a, parametros_b, parametros_c, inicializar, orden) VALUES (
+	'investigaciones', --proyecto
 	'280000698', --dep_id
 	'280000793', --objeto_consumidor
 	'280000800', --objeto_proveedor
@@ -263,6 +275,13 @@ INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id)
 	'280000793', --objeto_ci
 	'0', --orden
 	'280000696'  --dep_id
+);
+INSERT INTO apex_objetos_pantalla (proyecto, pantalla, objeto_ci, orden, dep_id) VALUES (
+	'investigaciones', --proyecto
+	'280000240', --pantalla
+	'280000793', --objeto_ci
+	'1', --orden
+	'280000857'  --dep_id
 );
 
 ------------------------------------------------------------

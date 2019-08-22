@@ -44,7 +44,24 @@ class ci_cargar_resol_acr_interna extends investigaciones_ci
     function evt__form__modificacion($datos)
     {
         $this->tabla('proyectos_inv')->set($datos);
-    } 	
+    } 
+    
+    //-----------------------------------------------------------------------------------
+    //---- form_ml ----------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
+
+    function conf__form_ml(investigaciones_ei_formulario_ml $form_ml)
+    {
+        if ($this->relacion()->esta_cargada()) {
+            $datos = $this->tabla('proyectos_inv_resoluciones')->get_filas();
+            $form_ml->set_datos($datos);
+        }
+    }
+
+    function evt__form_ml__modificacion($datos)
+    {
+        $this->tabla('proyectos_inv_resoluciones')->procesar_filas($datos);
+    }     
     //-----------------------------------------------------------------------------------
     //---- filtro -----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
