@@ -13,6 +13,7 @@ class co_proyectos_inv
 		ORDER BY ciclo_lectivo DESC, numero::Int
         ";
 	$proyectos = toba::db()->consultar($sql);
+        $total = array();
         
         foreach ($proyectos as $proy) {
             if (isset($proy['director'])) {

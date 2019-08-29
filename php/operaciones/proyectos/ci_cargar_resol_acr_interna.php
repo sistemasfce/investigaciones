@@ -20,7 +20,6 @@ class ci_cargar_resol_acr_interna extends investigaciones_ci
     function conf__cuadro(investigaciones_ei_cuadro $cuadro)
     {
         $where = $this->dep('filtro')->get_sql_where();
-        $aux = array();
         $where = $where . ' AND proyectos_inv.estado = 23 AND proyectos_inv.tipo::Int = 1';
         $datos = toba::consulta_php('co_proyectos_inv')->get_proyectos($where);
         $cuadro->set_datos($datos);
