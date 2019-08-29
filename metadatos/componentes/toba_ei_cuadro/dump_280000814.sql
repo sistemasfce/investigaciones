@@ -466,7 +466,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000814', --objeto_cuadro
 	'280001652', --objeto_cuadro_col
-	'evaluador', --clave
+	'evaluador_nombre', --clave
 	'12', --orden
 	'Evaluador', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
