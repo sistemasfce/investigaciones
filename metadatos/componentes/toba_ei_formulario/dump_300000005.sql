@@ -1,15 +1,15 @@
 ------------------------------------------------------------
---[280000794]--  Cargar proyecto PIC (Py-01) - form 
+--[300000005]--  Cargar proyecto PII  - form 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
 -- apex_objeto
 ------------------------------------------------------------
 
---- INICIO Grupo de desarrollo 280
+--- INICIO Grupo de desarrollo 300
 INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, clase_proyecto, clase, punto_montaje, subclase, subclase_archivo, objeto_categoria_proyecto, objeto_categoria, nombre, titulo, colapsable, descripcion, fuente_datos_proyecto, fuente_datos, solicitud_registrar, solicitud_obj_obs_tipo, solicitud_obj_observacion, parametro_a, parametro_b, parametro_c, parametro_d, parametro_e, parametro_f, usuario, creacion, posicion_botonera) VALUES (
 	'investigaciones', --proyecto
-	'280000794', --objeto
+	'300000005', --objeto
 	NULL, --anterior
 	NULL, --identificador
 	NULL, --reflexivo
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'Cargar proyecto PIC (Py-01) - form', --nombre
+	'Cargar proyecto PII  - form', --nombre
 	NULL, --titulo
 	'0', --colapsable
 	NULL, --descripcion
@@ -39,17 +39,17 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'2019-02-27 11:53:46', --creacion
 	'abajo'  --posicion_botonera
 );
---- FIN Grupo de desarrollo 280
+--- FIN Grupo de desarrollo 300
 
 ------------------------------------------------------------
 -- apex_objeto_eventos
 ------------------------------------------------------------
 
---- INICIO Grupo de desarrollo 280
+--- INICIO Grupo de desarrollo 300
 INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, etiqueta, maneja_datos, sobre_fila, confirmacion, estilo, imagen_recurso_origen, imagen, en_botonera, ayuda, orden, ci_predep, implicito, defecto, display_datos_cargados, grupo, accion, accion_imphtml_debug, accion_vinculo_carpeta, accion_vinculo_item, accion_vinculo_objeto, accion_vinculo_popup, accion_vinculo_popup_param, accion_vinculo_target, accion_vinculo_celda, accion_vinculo_servicio, es_seleccion_multiple, es_autovinculo) VALUES (
 	'investigaciones', --proyecto
-	'280000695', --evento_id
-	'280000794', --objeto
+	'300000004', --evento_id
+	'300000005', --objeto
 	'modificacion', --identificador
 	'&Modificar', --etiqueta
 	'1', --maneja_datos
@@ -79,14 +79,14 @@ INSERT INTO apex_objeto_eventos (proyecto, evento_id, objeto, identificador, eti
 	'0', --es_seleccion_multiple
 	'0'  --es_autovinculo
 );
---- FIN Grupo de desarrollo 280
+--- FIN Grupo de desarrollo 300
 
 ------------------------------------------------------------
 -- apex_objeto_ut_formulario
 ------------------------------------------------------------
 INSERT INTO apex_objeto_ut_formulario (objeto_ut_formulario_proyecto, objeto_ut_formulario, tabla, titulo, ev_agregar, ev_agregar_etiq, ev_mod_modificar, ev_mod_modificar_etiq, ev_mod_eliminar, ev_mod_eliminar_etiq, ev_mod_limpiar, ev_mod_limpiar_etiq, ev_mod_clave, clase_proyecto, clase, auto_reset, ancho, ancho_etiqueta, expandir_descripcion, campo_bl, scroll, filas, filas_agregar, filas_agregar_online, filas_agregar_abajo, filas_agregar_texto, filas_borrar_en_linea, filas_undo, filas_ordenar, filas_ordenar_en_linea, columna_orden, filas_numerar, ev_seleccion, alto, analisis_cambios, no_imprimir_efs_sin_estado, resaltar_efs_con_estado, template, template_impresion) VALUES (
 	'investigaciones', --objeto_ut_formulario_proyecto
-	'280000794', --objeto_ut_formulario
+	'300000005', --objeto_ut_formulario
 	NULL, --tabla
 	NULL, --titulo
 	NULL, --ev_agregar
@@ -130,10 +130,10 @@ INSERT INTO apex_objeto_ut_formulario (objeto_ut_formulario_proyecto, objeto_ut_
 -- apex_objeto_ei_formulario_ef
 ------------------------------------------------------------
 
---- INICIO Grupo de desarrollo 280
+--- INICIO Grupo de desarrollo 300
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001541', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000017', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'entrada_numero', --identificador
 	'ef_editable', --elemento_formulario
@@ -144,15 +144,15 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'N° de entrada', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
-	NULL, --colapsado
-	NULL, --desactivado
+	'0', --colapsado
+	'0', --desactivado
 	NULL, --estilo
 	NULL, --total
 	NULL, --inicializacion
-	NULL, --permitir_html
-	NULL, --deshabilitar_rest_func
+	'0', --permitir_html
+	'0', --deshabilitar_rest_func
 	NULL, --estado_defecto
-	NULL, --solo_lectura
+	'0', --solo_lectura
 	'0', --solo_lectura_modificacion
 	NULL, --carga_metodo
 	NULL, --carga_clase
@@ -212,8 +212,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001542', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000018', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'entrada_fecha', --identificador
 	'ef_editable_fecha', --elemento_formulario
@@ -224,15 +224,15 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'Fecha de entrada', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
-	NULL, --colapsado
-	NULL, --desactivado
+	'0', --colapsado
+	'0', --desactivado
 	NULL, --estilo
 	NULL, --total
 	NULL, --inicializacion
-	NULL, --permitir_html
-	NULL, --deshabilitar_rest_func
+	'0', --permitir_html
+	'0', --deshabilitar_rest_func
 	NULL, --estado_defecto
-	NULL, --solo_lectura
+	'0', --solo_lectura
 	'0', --solo_lectura_modificacion
 	NULL, --carga_metodo
 	NULL, --carga_clase
@@ -292,8 +292,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001543', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000019', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'titulo', --identificador
 	'ef_editable', --elemento_formulario
@@ -372,8 +372,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001545', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000020', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'tipo', --identificador
 	'ef_combo', --elemento_formulario
@@ -391,7 +391,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --inicializacion
 	'0', --permitir_html
 	'0', --deshabilitar_rest_func
-	'1', --estado_defecto
+	'2', --estado_defecto
 	'1', --solo_lectura
 	'0', --solo_lectura_modificacion
 	'get_proyectos_tipos', --carga_metodo
@@ -452,15 +452,15 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001546', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000021', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'director', --identificador
 	'ef_combo', --elemento_formulario
 	'director', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'10', --orden
+	'11', --orden
 	'Director', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -532,8 +532,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001548', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000022', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'ubicacion', --identificador
 	'ef_combo', --elemento_formulario
@@ -612,16 +612,16 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001549', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000023', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'carrera', --identificador
+	'ambito', --identificador
 	'ef_combo', --elemento_formulario
-	'carrera', --columnas
+	'ambito', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'6', --orden
-	'Carrera', --etiqueta
+	'Ámbito', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -634,7 +634,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --estado_defecto
 	'0', --solo_lectura
 	'0', --solo_lectura_modificacion
-	'get_carreras_ubicacion', --carga_metodo
+	'get_ambitos', --carga_metodo
 	NULL, --carga_clase
 	NULL, --carga_include
 	NULL, --carga_dt
@@ -642,9 +642,9 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --carga_sql
 	'investigaciones', --carga_fuente
 	NULL, --carga_lista
-	'carrera', --carga_col_clave
-	'nombre', --carga_col_desc
-	'ubicacion', --carga_maestros
+	'ambito', --carga_col_clave
+	'descripcion', --carga_col_desc
+	NULL, --carga_maestros
 	'0', --carga_cascada_relaj
 	'0', --cascada_mantiene_estado
 	'1', --carga_permite_no_seteado
@@ -692,8 +692,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001550', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000024', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'departamento', --identificador
 	'ef_combo', --elemento_formulario
@@ -772,16 +772,16 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001551', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000025', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'asignatura', --identificador
-	'ef_combo', --elemento_formulario
-	'asignatura', --columnas
-	'0', --obligatorio
+	'fecha_desde', --identificador
+	'ef_editable_fecha', --elemento_formulario
+	'fecha_desde', --columnas
+	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'8', --orden
-	'Asignatura', --etiqueta
+	'9', --orden
+	'Fecha desde', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -794,7 +794,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --estado_defecto
 	'0', --solo_lectura
 	'0', --solo_lectura_modificacion
-	'get_asignaturas_departamento', --carga_metodo
+	NULL, --carga_metodo
 	NULL, --carga_clase
 	NULL, --carga_include
 	NULL, --carga_dt
@@ -804,7 +804,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --carga_lista
 	'actividad', --carga_col_clave
 	'nombre_corto', --carga_col_desc
-	'carrera,departamento', --carga_maestros
+	NULL, --carga_maestros
 	'0', --carga_cascada_relaj
 	'0', --cascada_mantiene_estado
 	'1', --carga_permite_no_seteado
@@ -852,8 +852,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001553', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000026', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'proyecto_archivo', --identificador
 	'ef_upload', --elemento_formulario
@@ -932,15 +932,15 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001701', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000027', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'ciclo_lectivo', --identificador
 	'ef_combo', --elemento_formulario
 	'ciclo_lectivo', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'9', --orden
+	'8', --orden
 	'Ciclo lectivo', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
@@ -1012,8 +1012,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001702', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000028', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'tipo_inv', --identificador
 	'ef_multi_seleccion_check', --elemento_formulario
@@ -1092,8 +1092,8 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001703', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000029', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
 	'alcance', --identificador
 	'ef_multi_seleccion_check', --elemento_formulario
@@ -1172,16 +1172,16 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL  --placeholder
 );
 INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_formulario, objeto_ei_formulario_proyecto, identificador, elemento_formulario, columnas, obligatorio, oculto_relaja_obligatorio, orden, etiqueta, etiqueta_estilo, descripcion, colapsado, desactivado, estilo, total, inicializacion, permitir_html, deshabilitar_rest_func, estado_defecto, solo_lectura, solo_lectura_modificacion, carga_metodo, carga_clase, carga_include, carga_dt, carga_consulta_php, carga_sql, carga_fuente, carga_lista, carga_col_clave, carga_col_desc, carga_maestros, carga_cascada_relaj, cascada_mantiene_estado, carga_permite_no_seteado, carga_no_seteado, carga_no_seteado_ocultar, edit_tamano, edit_maximo, edit_mascara, edit_unidad, edit_rango, edit_filas, edit_columnas, edit_wrap, edit_resaltar, edit_ajustable, edit_confirmar_clave, edit_expreg, popup_item, popup_proyecto, popup_editable, popup_ventana, popup_carga_desc_metodo, popup_carga_desc_clase, popup_carga_desc_include, popup_puede_borrar_estado, fieldset_fin, check_valor_si, check_valor_no, check_desc_si, check_desc_no, check_ml_toggle, fijo_sin_estado, editor_ancho, editor_alto, editor_botonera, selec_cant_minima, selec_cant_maxima, selec_utilidades, selec_tamano, selec_ancho, selec_serializar, selec_cant_columnas, upload_extensiones, punto_montaje, placeholder) VALUES (
-	'280001938', --objeto_ei_formulario_fila
-	'280000794', --objeto_ei_formulario
+	'300000030', --objeto_ei_formulario_fila
+	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'evaluador', --identificador
-	'ef_combo', --elemento_formulario
-	'evaluador', --columnas
+	'fecha_hasta', --identificador
+	'ef_editable_fecha', --elemento_formulario
+	'fecha_hasta', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
-	'11', --orden
-	'Evaluador', --etiqueta
+	'10', --orden
+	'Fecha hasta', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado
@@ -1194,7 +1194,7 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	NULL, --estado_defecto
 	'0', --solo_lectura
 	'0', --solo_lectura_modificacion
-	'get_evaluadores', --carga_metodo
+	NULL, --carga_metodo
 	NULL, --carga_clase
 	NULL, --carga_include
 	NULL, --carga_dt
@@ -1251,4 +1251,4 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'280000003', --punto_montaje
 	NULL  --placeholder
 );
---- FIN Grupo de desarrollo 280
+--- FIN Grupo de desarrollo 300
