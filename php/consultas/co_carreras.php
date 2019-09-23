@@ -77,6 +77,22 @@ class co_carreras
                 ORDER BY ciclo_lectivo DESC
         ";
 	return toba::db('plantadb')->consultar($sql);    
-    }    
+    }   
+    
+    function get_ciclos_lectivos_proyectos($where = null) 
+    {
+        if (!isset($where))
+            $where = '1=1';
+        $sql = "SELECT *
+		FROM ciclos_lectivos
+		WHERE $where 
+                UNION SELECT date_part('year',CURRENT_DATE)+1
+		UNION SELECT date_part('year',CURRENT_DATE)+2
+		UNION SELECT date_part('year',CURRENT_DATE)+3
+                ORDER BY ciclo_lectivo DESC
+        ";
+        return toba::db('plantadb')->consultar($sql);
+    }
+
 }
 ?>

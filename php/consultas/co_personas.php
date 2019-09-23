@@ -126,6 +126,16 @@ class co_personas
                 ORDER BY persona
         ";
 	return toba::db('plantadb')->consultar($sql);
-    }        
+    }       
+    
+    function get_secretario_investigacion_actual()
+    {
+        $sql = "SELECT designaciones.persona, apellido||', '|| nombres as nombre_completo 
+                FROM negocio.designaciones LEFT OUTER JOIN negocio.personas on personas.persona = designaciones.persona
+                WHERE espacio_disciplinar = 144
+                AND fecha_hasta > current_date 
+        ";
+	return toba::db('plantadb')->consultar($sql);
+    }
 }
 ?>
