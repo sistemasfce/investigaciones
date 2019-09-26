@@ -77,5 +77,14 @@ class co_parametros
         ";
 	return toba::db()->consultar($sql);
     }    
+    function get_proyectos_estados($where='1=1')
+    {
+        $sql = "SELECT *
+		FROM proyectos_estados
+		WHERE $where AND proyecto_estado in (25,26,27)
+		ORDER BY descripcion
+        ";
+	return toba::db()->consultar($sql);
+    }    
 }
 ?>
