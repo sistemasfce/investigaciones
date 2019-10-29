@@ -78,7 +78,7 @@ class co_personas
                 LEFT OUTER JOIN personas_categorias_inv ON personas.persona = personas_categorias_inv.persona
             WHERE 
                 $where
-                designaciones.estado in ( 1,5) 
+                AND designaciones.estado in ( 1,5) 
                 AND designaciones.categoria in (1,2,3,4,5)
                 AND personas_categorias_inv.resultado_categoria in ('1 (uno)','2 (dos)','3 (tres)','4 (cuatro)','5 (cinco)')
                 ORDER BY 
