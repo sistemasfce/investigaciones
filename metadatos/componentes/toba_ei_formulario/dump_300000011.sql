@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[300000011]--  _fcefceCargar evaluador propuesta PIC (Pp-02) - form 
+--[300000011]--  Cargar comite evaluador proyecto PII - form 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -16,12 +16,12 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'toba', --clase_proyecto
 	'toba_ei_formulario', --clase
 	'280000003', --punto_montaje
-	'form_carga', --subclase
-	'operaciones/proyectos/form_carga.php', --subclase_archivo
+	NULL, --subclase
+	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'_fcefceCargar evaluador propuesta PIC (Pp-02) - form', --nombre
-	'Cargar evaluador propuesta PII', --titulo
+	'Cargar comite evaluador proyecto PII - form', --nombre
+	'Cargar comite evaluador proyecto PII', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	'investigaciones', --fuente_datos_proyecto
@@ -1335,13 +1335,13 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'300000051', --objeto_ei_formulario_fila
 	'300000011', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'investigador_categora3', --identificador
+	'investigador_categoria', --identificador
 	'ef_combo', --elemento_formulario
-	'investigador_categora3', --columnas
+	'investigador_categoria', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'16', --orden
-	'Investigador cat 3 o superior', --etiqueta
+	'Investigador categorizado', --etiqueta
 	NULL, --etiqueta_estilo
 	NULL, --descripcion
 	'0', --colapsado

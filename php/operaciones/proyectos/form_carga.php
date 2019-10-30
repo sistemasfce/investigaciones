@@ -60,15 +60,10 @@ class form_carga extends investigaciones_ei_formulario
 			}
 			if (this.ef('tipo').get_estado() == 3) {    
 				this.ef('ubicacion').mostrar();
+                                this.ef('ambito').mostrar();
 				this.ef('carrera').ocultar();
 				this.ef('departamento').mostrar();
 				this.ef('asignatura').ocultar();
-				if (this.ef('ambito_')chequeado()){
-				alert('esta chequeado');
-				this.ef('proyecto_inv').ocultar();
-			
-			}
-				this.ef('ambito').ocultar();
 			}
 		}            
 		";

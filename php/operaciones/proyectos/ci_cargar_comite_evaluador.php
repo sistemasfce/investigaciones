@@ -79,9 +79,9 @@ class ci_cargar_comite_evaluador extends investigaciones_ci
             $aux['apex_ei_analisis_fila'] = 'A';
             $comite[]= $aux;
         }
-        if (isset($datos['investigador_categora3'])){
+        if (isset($datos['investigador_categoria'])){
             $aux['proyecto']=$this->s__proyecto['proyecto'];
-            $aux['persona']= $datos['investigador_categora3'];
+            $aux['persona']= $datos['investigador_categoria'];
             $aux['rol']= 11;
             $aux['fecha_asignacion']= $datos['fecha_asignacion_inv'];  
             $aux['apex_ei_analisis_fila'] = 'A';
@@ -95,8 +95,9 @@ class ci_cargar_comite_evaluador extends investigaciones_ci
             $aux['apex_ei_analisis_fila'] = 'A';
             $comite[]= $aux;
         }
- 
-        $this->tabla('proyectos_inv_comite')->procesar_filas($comite);
+       // ei_arbol($comite);
+        if (isset($comite))
+            $this->tabla('proyectos_inv_comite')->procesar_filas($comite);
     } 	
     //-----------------------------------------------------------------------------------
     //---- filtro -----------------------------------------------------------------------
@@ -124,14 +125,15 @@ class ci_cargar_comite_evaluador extends investigaciones_ci
 
     function evt__procesar()
     {
-        $this->dep('relacion')->sincronizar();
-        $this->dep('relacion')->resetear();
+        
+        $this->relacion()->sincronizar();
+        $this->relacion()->resetear();
         $this->set_pantalla('seleccion');
     }
 
     function evt__cancelar()
     {
-        $this->dep('relacion')->resetear();
+        $this->relacion()->resetear();
         $this->set_pantalla('seleccion');
     }
 }
