@@ -21,7 +21,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
 	'Cargar evaluacion proyecto PII - form', --nombre
-	'Cargar evaluación propuesta PII', --titulo
+	'Cargar evaluación proyecto PII', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	'investigaciones', --fuente_datos_proyecto

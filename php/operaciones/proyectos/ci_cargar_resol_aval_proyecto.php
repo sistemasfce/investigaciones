@@ -1,5 +1,5 @@
 <?php
-class ci_cargar_evaluacion_proyectos extends investigaciones_ci
+class ci_cargar_resol_aval_proyecto extends investigaciones_ci
 { 
     //-------------------------------------------------------------------------
     function relacion()
@@ -19,36 +19,11 @@ class ci_cargar_evaluacion_proyectos extends investigaciones_ci
 
     function conf__cuadro(investigaciones_ei_cuadro $cuadro)
     {
+        //proyectos_inv.estado = 25 aprobado AND proyectos_inv.tipo::Int = '
         $where = $this->dep('filtro')->get_sql_where();
-        $aux = array();
-        $tipo = $cuadro->get_parametro('a');
-        $where = $where . ' AND proyectos_inv.estado = 24 AND proyectos_inv.tipo = '.$tipo;
+        $where = $where . ' AND proyectos_inv.estado = 25 ';
         $datos = toba::consulta_php('co_proyectos_inv')->get_proyectos($where);
-        foreach ($datos as $dat) {
-            $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['director']);
-            $dat['nombre_completo'] = $nombre['nombre_completo'];
-            //$nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['evaluador']);
-          //  $dat['evaluador_nombre'] = $nombre['nombre_completo'];
-            if (isset($dat['carrera'])) {
-                $nombre = toba::consulta_php('co_carreras')->get_carreras('carrera = '.$dat['carrera']);
-                $dat['carrera_desc'] = $nombre[0]['nombre'];     
-            }
-            if (isset($dat['departamento'])) {
-                $nombre = toba::consulta_php('co_carreras')->get_departamentos('departamento = '.$dat['departamento']);
-                $dat['departamento_desc'] = $nombre[0]['descripcion'];     
-            }    
-            if (isset($dat['asignatura'])) {
-                $nombre = toba::consulta_php('co_carreras')->get_asignaturas('actividad = '.$dat['asignatura']);
-                $dat['asignatura_desc'] = $nombre[0]['descripcion'];     
-            } 
-            if (isset($dat['ambito'])) {
-                $nombre = toba::consulta_php('co_carreras')->get_ambitos('ambito = '.$dat['ambito']);
-                $dat['ambito_desc'] = $nombre[0]['descripcion'];     
-            }            
-            $aux[] = $dat;
-        }
-        $datos_ordenados = rs_ordenar_por_columna($aux, 'numero');
-        $cuadro->set_datos($datos_ordenados);
+        $cuadro->set_datos($datos);
     }
 
     function evt__cuadro__seleccion($seleccion)
@@ -62,25 +37,31 @@ class ci_cargar_evaluacion_proyectos extends investigaciones_ci
     {
         if ($this->relacion()->esta_cargada()) {
             $datos = $this->tabla('proyectos_inv')->get();
-            $comite = $this->tabla('proyectos_inv_comite')->get_filas();
-            foreach ($comite as $ev) {
-                if ($ev['rol'] == 14)
-                    $datos['secretario_investigacion']= $ev['persona'];
-                elseif ($ev['rol']==11) {
-                        $datos['investigador']= $ev['persona'];
-                }else
-                    $datos['especialista']= $ev['persona'];
-                
-            }
             $form->set_datos($datos);
         }
     }        
 
     function evt__form__modificacion($datos)
     {
-        $datos['evaluacion'] = $datos['estado']; 
         $this->tabla('proyectos_inv')->set($datos);
-    } 	
+    } 
+    
+    //-----------------------------------------------------------------------------------
+    //---- form_ml ----------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
+
+    function conf__form_ml(investigaciones_ei_formulario_ml $form_ml)
+    {
+        if ($this->relacion()->esta_cargada()) {
+            $datos = $this->tabla('proyectos_inv_resoluciones')->get_filas();
+            $form_ml->set_datos($datos);
+        }
+    }
+
+    function evt__form_ml__modificacion($datos)
+    {
+        $this->tabla('proyectos_inv_resoluciones')->procesar_filas($datos);
+    }     
     //-----------------------------------------------------------------------------------
     //---- filtro -----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
