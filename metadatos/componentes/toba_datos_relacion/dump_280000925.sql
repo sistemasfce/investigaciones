@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000925]--  fcefcefceCargar evaluador propuesta PIC (Pp-02) - relacion 
+--[280000925]--  Cargar presentacion propuesta PII - relacion 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fcefcefceCargar evaluador propuesta PIC (Pp-02) - relacion', --nombre
+	'Cargar presentacion propuesta PII - relacion', --nombre
 	NULL, --titulo
 	NULL, --colapsable
 	NULL, --descripcion

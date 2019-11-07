@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000919]--  fcefceCargar evaluador propuesta PIC (Pp-02) - form 
+--[280000919]--  Cargar evaluacion propuesta PII - form 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'operaciones/propuestas/form_carga_evaluacion.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fcefceCargar evaluador propuesta PIC (Pp-02) - form', --nombre
+	'Cargar evaluacion propuesta PII - form', --nombre
 	'Cargar evaluación propuesta PII', --titulo
 	'0', --colapsable
 	NULL, --descripcion

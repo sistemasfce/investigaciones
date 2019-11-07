@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000787]--  fceCargar evaluador propuesta PIC (Pp-02) - cuadro 
+--[280000787]--  Cargar evaluacion propuesta PIC (Pp-02) - cuadro 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fceCargar evaluador propuesta PIC (Pp-02) - cuadro', --nombre
+	'Cargar evaluacion propuesta PIC (Pp-02) - cuadro', --nombre
 	'Listado propuestas PIC en evaluación (Pan Pp-04)', --titulo
 	'0', --colapsable
 	NULL, --descripcion

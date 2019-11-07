@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000906]--  fceCargar propuesta (Pp-01) - form 
+--[280000906]--  Cargar propuesta (Pp-01) - form 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'operaciones/propuestas/form_carga.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fceCargar propuesta (Pp-01) - form', --nombre
+	'Cargar propuesta (Pp-01) - form', --nombre
 	NULL, --titulo
 	'0', --colapsable
 	NULL, --descripcion

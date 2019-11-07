@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000926]--  fcefcefceCargar evaluador propuesta PIC (Pp-02) 
+--[280000926]--  Cargar presentacion propuesta PII 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'operaciones/propuestas/ci_cargar_presentacion.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fcefcefceCargar evaluador propuesta PIC (Pp-02)', --nombre
+	'Cargar presentacion propuesta PII', --nombre
 	NULL, --titulo
 	'0', --colapsable
 	NULL, --descripcion

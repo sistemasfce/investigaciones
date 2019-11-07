@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000908]--  fceCargar propuesta (Pan Pp-01) 
+--[280000908]--  Cargar propuesta (Pan Pp-01) 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	'operaciones/propuestas/ci_propuestas.php', --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fceCargar propuesta (Pan Pp-01)', --nombre
+	'Cargar propuesta (Pan Pp-01)', --nombre
 	'Cargar propuestas PII', --titulo
 	'0', --colapsable
 	NULL, --descripcion

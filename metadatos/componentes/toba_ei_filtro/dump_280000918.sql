@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000918]--  fcefceCargar evaluador propuesta PIC (Pp-02) - filtro 
+--[280000918]--  Cargar evaluacion propuesta PII - filtro 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,7 +20,7 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fcefceCargar evaluador propuesta PIC (Pp-02) - filtro', --nombre
+	'Cargar evaluacion propuesta PII - filtro', --nombre
 	NULL, --titulo
 	'0', --colapsable
 	NULL, --descripcion
