@@ -66,11 +66,6 @@ class ci_cargar_resol_aval_proyecto extends investigaciones_ci
         }
     }        
 
-    function evt__form__modificacion($datos)
-    {
-        $this->tabla('proyectos_inv')->set($datos);
-    } 
-    
     //-----------------------------------------------------------------------------------
     //---- form_ml ----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
@@ -85,6 +80,10 @@ class ci_cargar_resol_aval_proyecto extends investigaciones_ci
 
     function evt__form_ml__modificacion($datos)
     {
+        $proyecto = $this->tabla('proyectos_inv')->get();
+        $proyecto['estado'] = 28; // proyecto avalado
+        $this->tabla('proyectos_inv')->set($proyecto);
+        
         $this->tabla('proyectos_inv_resoluciones')->procesar_filas($datos);
     }     
     //-----------------------------------------------------------------------------------

@@ -1,7 +1,6 @@
 <?php
-class ci_cargar_comite_evaluador extends investigaciones_ci
+class ci_cargar_resol_aprobacion_rector_proyecto_pi extends investigaciones_ci
 { 
-    protected $s__proyecto;
     //-------------------------------------------------------------------------
     function relacion()
     {
@@ -23,11 +22,13 @@ class ci_cargar_comite_evaluador extends investigaciones_ci
         $where = $this->dep('filtro')->get_sql_where();
         $aux = array();
         $tipo = $cuadro->get_parametro('a');
-        $where = $where . ' AND proyectos_inv.estado = 23 AND proyectos_inv.tipo = '.$tipo;
+        $where = $where . ' AND proyectos_inv.estado = 28 AND proyectos_inv.tipo = '.$tipo;
         $datos = toba::consulta_php('co_proyectos_inv')->get_proyectos($where);
         foreach ($datos as $dat) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['director']);
             $dat['nombre_completo'] = $nombre['nombre_completo'];
+            //$nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['evaluador']);
+          //  $dat['evaluador_nombre'] = $nombre['nombre_completo'];
             if (isset($dat['carrera'])) {
                 $nombre = toba::consulta_php('co_carreras')->get_carreras('carrera = '.$dat['carrera']);
                 $dat['carrera_desc'] = $nombre[0]['nombre'];     
@@ -43,17 +44,16 @@ class ci_cargar_comite_evaluador extends investigaciones_ci
             if (isset($dat['ambito'])) {
                 $nombre = toba::consulta_php('co_carreras')->get_ambitos('ambito = '.$dat['ambito']);
                 $dat['ambito_desc'] = $nombre[0]['descripcion'];     
-            }             
+            }            
             $aux[] = $dat;
         }
-        //$datos_ordenados = rs_ordenar_por_columna($aux, 'numero');
-        $cuadro->set_datos($aux);
+        $datos_ordenados = rs_ordenar_por_columna($aux, 'numero');
+        $cuadro->set_datos($datos_ordenados);        
     }
 
     function evt__cuadro__seleccion($seleccion)
     {
         $this->relacion()->cargar($seleccion);
-        $this->s__proyecto = $seleccion;
         $this->set_pantalla('edicion');
     }    
 
@@ -65,40 +65,27 @@ class ci_cargar_comite_evaluador extends investigaciones_ci
             $form->set_datos($datos);
         }
     }        
+   
+    //-----------------------------------------------------------------------------------
+    //---- form_ml ----------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
 
-    function evt__form__modificacion($datos)
+    function conf__form_ml(investigaciones_ei_formulario_ml $form_ml)
     {
-        if (isset($datos['secretario_investigacion'])){
-            $aux['proyecto']=$this->s__proyecto['proyecto'];
-            $aux['persona']= $datos['secretario_investigacion'];
-            $aux['rol']= 14;
-            $aux['fecha_asignacion']= $datos['fecha_asignacion_sec'];
-            $aux['apex_ei_analisis_fila'] = 'A';
-            $comite[]= $aux;
+        if ($this->relacion()->esta_cargada()) {
+            $datos = $this->tabla('proyectos_inv_resoluciones')->get_filas();
+            $form_ml->set_datos($datos);
         }
-        if (isset($datos['investigador_categoria'])){
-            $aux['proyecto']=$this->s__proyecto['proyecto'];
-            $aux['persona']= $datos['investigador_categoria'];
-            $aux['rol']= 11;
-            $aux['fecha_asignacion']= $datos['fecha_asignacion_inv'];  
-            $aux['apex_ei_analisis_fila'] = 'A';
-            $comite[]= $aux;
-        }
-        if (isset($datos['especialista_disciplinar'])){
-            $aux['proyecto']=$this->s__proyecto['proyecto'];
-            $aux['persona']= $datos['especialista_disciplinar'];
-            $aux['rol']= 15;
-            $aux['fecha_asignacion']= $datos['fecha_asignacion_esp'];
-            $aux['apex_ei_analisis_fila'] = 'A';
-            $comite[]= $aux;
-        }
-       // ei_arbol($comite);
-        if (isset($comite)){
-            $this->tabla('proyectos_inv_comite')->procesar_filas($comite);
-            $datos['estado'] = 24; // pasa a estado en evaluacion
-            $this->tabla('proyectos_inv')->set($datos);
-        }
-    } 	
+    }
+
+    function evt__form_ml__modificacion($datos)
+    {
+        $proyecto = $this->tabla('proyectos_inv')->get();
+        $proyecto['estado'] = 29; // proyecto incorporado
+        $this->tabla('proyectos_inv')->set($proyecto);
+        
+        $this->tabla('proyectos_inv_resoluciones')->procesar_filas($datos);
+    }     
     //-----------------------------------------------------------------------------------
     //---- filtro -----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
@@ -125,15 +112,14 @@ class ci_cargar_comite_evaluador extends investigaciones_ci
 
     function evt__procesar()
     {
-        
-        $this->relacion()->sincronizar();
-        $this->relacion()->resetear();
+        $this->dep('relacion')->sincronizar();
+        $this->dep('relacion')->resetear();
         $this->set_pantalla('seleccion');
     }
 
     function evt__cancelar()
     {
-        $this->relacion()->resetear();
+        $this->dep('relacion')->resetear();
         $this->set_pantalla('seleccion');
     }
 }
