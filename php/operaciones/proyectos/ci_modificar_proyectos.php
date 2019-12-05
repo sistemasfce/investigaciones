@@ -83,7 +83,10 @@ class ci_modificar_proyectos extends investigaciones_ci
 
     function conf__form(investigaciones_ei_formulario $form)
     {
-        $form->set_datos($datos);
+        if ($this->relacion()->esta_cargada()) {
+            $datos = $this->tabla('proyectos_inv')->get();
+            $form->set_datos($datos);
+        }
     }    
     
     function evt__form__modificacion($datos)
@@ -97,7 +100,6 @@ class ci_modificar_proyectos extends investigaciones_ci
             move_uploaded_file($datos['proyecto_archivo']['tmp_name'], $destino);   
             $datos['proyecto_path'] = $destino;   
 	}
-        $datos['estado'] = 23;  // aceptado
         $this->tabla('proyectos_inv')->set($datos);
         foreach ($datos['alcance'] as $alc) {
             $aux['alcance'] = $alc;
@@ -138,16 +140,16 @@ class ci_modificar_proyectos extends investigaciones_ci
        try {
             $this->dep('relacion')->sincronizar();
             $this->dep('relacion')->resetear();
-            $datos = toba::consulta_php('co_proyectos_inv')->get_ultimo_numero();
-            toba::notificacion()->agregar('Proyecto registrado con N° '.$datos['numero'], 'info');
+            $this->set_pantalla('seleccion');
        }catch (toba_error $e) {
-           toba::notificacion()->agregar('No se puede insertar el registro', 'error');
+           toba::notificacion()->agregar('No se puede modificar el registro', 'error');
        }
     }
 
     function evt__cancelar()
     {
         $this->dep('relacion')->resetear();
+        $this->set_pantalla('seleccion');
     }  
     
     function sanear_string($string)

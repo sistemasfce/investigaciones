@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[300000069]--  -Cargar resolución de aval de proyecto - form 
+--[300000069]--  Cargar resolución de aprobacion de rector de proyecto - form 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,8 +20,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'-Cargar resolución de aval de proyecto - form', --nombre
-	'Cargar resolución de aval proyecto PI', --titulo
+	'Cargar resolución de aprobacion de rector de proyecto - form', --nombre
+	'Cargar resolución de aprobacion de rector / consejo superior proyecto PI', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	'investigaciones', --fuente_datos_proyecto

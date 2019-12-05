@@ -20,7 +20,7 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
     function conf__cuadro(investigaciones_ei_cuadro $cuadro)
     {
         $where = $this->dep('filtro')->get_sql_where();
-        $where.= 'AND proyectos_inv.tipo = 2';
+        $where.= 'AND proyectos_inv.tipo = 1';
         $datos = toba::consulta_php('co_proyectos_inv')->get_proyectos($where); 
         $cuadro->set_datos($datos);
     } 
@@ -76,7 +76,7 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
             move_uploaded_file($datos['proyecto_archivo']['tmp_name'], $destino);   
             $datos['proyecto_path'] = $destino;   
 	}
-        $datos['estado'] = 23;  // aceptado
+     //   $datos['estado'] = 23;  // aceptado
         $this->tabla('proyectos_inv')->set($datos);
         foreach ($datos['alcance'] as $alc) {
             $aux['alcance'] = $alc;
@@ -119,7 +119,7 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
             $this->dep('relacion')->resetear();
             $this->set_pantalla('seleccion');
        }catch (toba_error $e) {
-           toba::notificacion()->agregar('No se puede insertar el registro', 'error');
+           toba::notificacion()->agregar('No se puede modificar el registro', 'error');
        }
     }
 

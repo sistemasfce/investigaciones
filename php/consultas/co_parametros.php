@@ -85,6 +85,6 @@ class co_parametros
 		ORDER BY descripcion
         ";
 	return toba::db()->consultar($sql);
-    }    
+    }   
 }
 ?>

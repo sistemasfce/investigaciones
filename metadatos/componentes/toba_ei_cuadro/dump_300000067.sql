@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[300000067]--  -Cargar resolución de aval de proyecto PI - cuadro 
+--[300000067]--  Cargar resolución de aprobacion de rector de proyecto PI - cuadro 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,8 +20,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'-Cargar resolución de aval de proyecto PI - cuadro', --nombre
-	'Listado proyectos PI aprobados', --titulo
+	'Cargar resolución de aprobacion de rector de proyecto PI - cuadro', --nombre
+	'Listado proyectos PI avalados', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	NULL, --fuente_datos_proyecto
