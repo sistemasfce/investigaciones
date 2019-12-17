@@ -59,6 +59,9 @@ class ci_cargar_resol_acr_interna extends investigaciones_ci
 
     function evt__form_ml__modificacion($datos)
     {
+        $proyecto = $this->tabla('proyectos_inv')->get();
+        $proyecto['estado'] = 25; // proyecto aprobado
+        $this->tabla('proyectos_inv')->set($proyecto);
         $this->tabla('proyectos_inv_resoluciones')->procesar_filas($datos);
     }     
     //-----------------------------------------------------------------------------------

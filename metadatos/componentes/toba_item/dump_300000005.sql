@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[300000005]--  Proyectos PI 
+--[300000005]--  PI 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -13,7 +13,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	'300000005', --item
 	NULL, --padre_id
 	'investigaciones', --padre_proyecto
-	'280000087', --padre
+	'1', --padre
 	'1', --carpeta
 	'0', --nivel_acceso
 	NULL, --solicitud_tipo
@@ -23,12 +23,12 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Proyectos PI', --nombre
+	'PI', --nombre
 	NULL, --descripcion
 	NULL, --punto_montaje
 	NULL, --actividad_accion
 	'1', --menu
-	'3', --orden
+	'6', --orden
 	NULL, --solicitud_registrar
 	NULL, --solicitud_obs_tipo_proyecto
 	NULL, --solicitud_obs_tipo

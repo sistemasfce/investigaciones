@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000227]--  Proyectos PIC 
+--[280000227]--  PIC 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -13,7 +13,7 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	'280000227', --item
 	NULL, --padre_id
 	'investigaciones', --padre_proyecto
-	'280000087', --padre
+	'1', --padre
 	'1', --carpeta
 	'0', --nivel_acceso
 	NULL, --solicitud_tipo
@@ -23,12 +23,12 @@ INSERT INTO apex_item (item_id, proyecto, item, padre_id, padre_proyecto, padre,
 	NULL, --actividad_buffer
 	NULL, --actividad_patron_proyecto
 	NULL, --actividad_patron
-	'Proyectos PIC', --nombre
+	'PIC', --nombre
 	NULL, --descripcion
 	NULL, --punto_montaje
 	NULL, --actividad_accion
 	'1', --menu
-	'1', --orden
+	'4', --orden
 	NULL, --solicitud_registrar
 	NULL, --solicitud_obs_tipo_proyecto
 	NULL, --solicitud_obs_tipo
