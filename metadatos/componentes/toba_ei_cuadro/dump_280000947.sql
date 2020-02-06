@@ -1,5 +1,5 @@
 ------------------------------------------------------------
---[280000947]--  fcefceCargar evaluador propuesta PIC (Pp-02) - cuadro 
+--[280000947]--  Cargar evaluador propuesta PII - cuadro 
 ------------------------------------------------------------
 
 ------------------------------------------------------------
@@ -20,8 +20,8 @@ INSERT INTO apex_objeto (proyecto, objeto, anterior, identificador, reflexivo, c
 	NULL, --subclase_archivo
 	NULL, --objeto_categoria_proyecto
 	NULL, --objeto_categoria
-	'fcefceCargar evaluador propuesta PIC (Pp-02) - cuadro', --nombre
-	'Listado propuestas PIC', --titulo
+	'Cargar evaluador propuesta PII - cuadro', --nombre
+	'Listado propuestas PII', --titulo
 	'0', --colapsable
 	NULL, --descripcion
 	NULL, --fuente_datos_proyecto
@@ -94,7 +94,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'280000947', --objeto_cuadro
 	'280001658', --objeto_cuadro_col
-	'evaluador', --clave
+	'evaluador_nombre', --clave
 	'12', --orden
 	'Evaluador', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
