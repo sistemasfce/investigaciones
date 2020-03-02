@@ -52,6 +52,7 @@ class ci_modificar_proyectos extends investigaciones_ci
     function evt__cuadro__seleccion($seleccion)
     {
         $this->relacion()->cargar($seleccion);
+        ei_arbol($seleccion);
         $this->s__proyecto = $seleccion;
         $this->set_pantalla('edicion');
     }    

@@ -775,9 +775,9 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'300000025', --objeto_ei_formulario_fila
 	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'fecha_desde', --identificador
+	'fecha_inicio', --identificador
 	'ef_editable_fecha', --elemento_formulario
-	'fecha_desde', --columnas
+	'fecha_inicio', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'9', --orden
@@ -1175,9 +1175,9 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'300000030', --objeto_ei_formulario_fila
 	'300000005', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'fecha_hasta', --identificador
+	'fecha_final', --identificador
 	'ef_editable_fecha', --elemento_formulario
-	'fecha_hasta', --columnas
+	'fecha_final', --columnas
 	'1', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'10', --orden

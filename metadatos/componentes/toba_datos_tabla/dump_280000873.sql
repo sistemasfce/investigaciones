@@ -407,6 +407,65 @@ INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, colum
 );
 --- FIN Grupo de desarrollo 280
 
+--- INICIO Grupo de desarrollo 300
+INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
+	'investigaciones', --objeto_proyecto
+	'280000873', --objeto
+	'300000009', --col_id
+	'fecha_inicio', --columna
+	'F', --tipo
+	'0', --pk
+	'', --secuencia
+	NULL, --largo
+	NULL, --no_nulo
+	'0', --no_nulo_db
+	'0', --externa
+	'proyectos_inv'  --tabla
+);
+INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
+	'investigaciones', --objeto_proyecto
+	'280000873', --objeto
+	'300000010', --col_id
+	'fecha_final', --columna
+	'F', --tipo
+	'0', --pk
+	'', --secuencia
+	NULL, --largo
+	NULL, --no_nulo
+	'0', --no_nulo_db
+	'0', --externa
+	'proyectos_inv'  --tabla
+);
+INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
+	'investigaciones', --objeto_proyecto
+	'280000873', --objeto
+	'300000011', --col_id
+	'proyecto_catedra', --columna
+	'E', --tipo
+	'0', --pk
+	'', --secuencia
+	NULL, --largo
+	NULL, --no_nulo
+	'0', --no_nulo_db
+	'0', --externa
+	'proyectos_inv'  --tabla
+);
+INSERT INTO apex_objeto_db_registros_col (objeto_proyecto, objeto, col_id, columna, tipo, pk, secuencia, largo, no_nulo, no_nulo_db, externa, tabla) VALUES (
+	'investigaciones', --objeto_proyecto
+	'280000873', --objeto
+	'300000012', --col_id
+	'id_proyecto_tabla_anterior', --columna
+	'E', --tipo
+	'0', --pk
+	'', --secuencia
+	NULL, --largo
+	NULL, --no_nulo
+	'0', --no_nulo_db
+	'0', --externa
+	'proyectos_inv'  --tabla
+);
+--- FIN Grupo de desarrollo 300
+
 ------------------------------------------------------------
 -- apex_objeto_db_registros_ext
 ------------------------------------------------------------
