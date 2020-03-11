@@ -289,7 +289,7 @@ INSERT INTO apex_objeto_ei_cuadro_columna (objeto_cuadro_proyecto, objeto_cuadro
 	'investigaciones', --objeto_cuadro_proyecto
 	'300000084', --objeto_cuadro
 	'300000118', --objeto_cuadro_col
-	'numero', --clave
+	'numero_pi_cyt', --clave
 	'1', --orden
 	'Número', --titulo
 	'ei-cuadro-col-tit', --estilo_titulo
