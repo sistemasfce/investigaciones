@@ -46,7 +46,7 @@ class ci_modificar_proyectos_pic extends investigaciones_ci
                 exec("cp '". $datos['proyecto_path']. "' '" .$dir_tmp['path']."/".$nombre."'");
                 $temp_archivo = toba::proyecto()->get_www_temp($nombre);
                 $tamanio = round(filesize($temp_archivo['path']) / 1024);
-                $datos['proyecto_path_v'] = "<a href='{$temp_archivo['url']}'target='_blank'>Descargar archivo</a>";
+                $datos['proyecto_path'] = "<a href='{$temp_archivo['url']}'target='_blank'>Descargar archivo</a>";
                 $datos['proyecto_archivo'] = $nombre. ' - Tam.: '.$tamanio. ' KB';  
             }
 

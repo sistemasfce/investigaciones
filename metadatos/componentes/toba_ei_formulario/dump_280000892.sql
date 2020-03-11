@@ -1175,9 +1175,9 @@ INSERT INTO apex_objeto_ei_formulario_ef (objeto_ei_formulario_fila, objeto_ei_f
 	'280001937', --objeto_ei_formulario_fila
 	'280000892', --objeto_ei_formulario
 	'investigaciones', --objeto_ei_formulario_proyecto
-	'proyecto_path_v', --identificador
+	'proyecto_path', --identificador
 	'ef_fijo', --elemento_formulario
-	'proyecto_path_v', --columnas
+	'proyecto_path', --columnas
 	'0', --obligatorio
 	'0', --oculto_relaja_obligatorio
 	'15', --orden

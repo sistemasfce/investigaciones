@@ -52,7 +52,6 @@ class ci_modificar_proyectos extends investigaciones_ci
     function evt__cuadro__seleccion($seleccion)
     {
         $this->relacion()->cargar($seleccion);
-        ei_arbol($seleccion);
         $this->s__proyecto = $seleccion;
         $this->set_pantalla('edicion');
     }    
@@ -86,6 +85,23 @@ class ci_modificar_proyectos extends investigaciones_ci
     {
         if ($this->relacion()->esta_cargada()) {
             $datos = $this->tabla('proyectos_inv')->get();
+            $nombre = substr($datos['proyecto_path'],23);
+            $dir_tmp = toba::proyecto()->get_www_temp();
+            exec("cp '". $datos['proyecto_path']. "' '" .$dir_tmp['path']."/".$nombre."'");
+            $temp_archivo = toba::proyecto()->get_www_temp($nombre);
+            $tamanio = round(filesize($temp_archivo['path']) / 1024);
+            $datos['proyecto_path'] = "<a href='{$temp_archivo['url']}'target='_blank'>Descargar archivo</a>";
+            $datos['proyecto'] = $nombre. ' - Tam.: '.$tamanio. ' KB'; 
+            $alcances = $this->tabla('proyectos_inv_alcances_inv')->get_filas();
+            $tipos = $this->tabla('proyectos_inv_tipos_inv')->get_filas();
+            foreach ($tipos as $ti) {
+                $array_tipo[] = $ti['tipo'];
+            }
+            foreach ($alcances as $al) {
+                $array_alcance[] = $al['alcance'];
+            }
+            $datos['tipo_inv'] = $array_tipo;
+            $datos['alcance'] = $array_alcance;
             $form->set_datos($datos);
         }
     }    
