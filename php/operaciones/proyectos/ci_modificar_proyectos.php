@@ -25,8 +25,10 @@ class ci_modificar_proyectos extends investigaciones_ci
         $where = $where . ' AND proyectos_inv.tipo = '.$tipo;
         $datos = toba::consulta_php('co_proyectos_inv')->get_proyectos($where);
         foreach ($datos as $dat) {
+            if (isset($dat['director'])) {
             $nombre = toba::consulta_php('co_personas')->get_datos_persona($dat['director']);
             $dat['nombre_completo'] = $nombre['nombre_completo'];
+            }
             if (isset($dat['carrera'])) {
                 $nombre = toba::consulta_php('co_carreras')->get_carreras('carrera = '.$dat['carrera']);
                 $dat['carrera_desc'] = $nombre[0]['nombre'];     
