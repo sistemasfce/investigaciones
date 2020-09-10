@@ -76,7 +76,7 @@ class ci_cargar_proyectos_pi extends investigaciones_ci
     function conf__form_ml_prog(investigaciones_ei_formulario_ml $form_ml)
     {
         if ($this->relacion()->esta_cargada()) {
-            $datos = $this->tabla('proyectos_inv_prog')->get_filas();
+            $datos = $this->tabla('proyectos_inv_en_programas')->get_filas();
             $form_ml->set_datos($datos);
         }
     }
@@ -84,7 +84,7 @@ class ci_cargar_proyectos_pi extends investigaciones_ci
     function evt__form_ml_prog__modificacion($datos)
     {
 
-        $this->tabla('proyectos_inv_prog')->procesar_filas($datos);
+        $this->tabla('proyectos_inv_en_programas')->procesar_filas($datos);
     }   
 
     function evt__procesar()
