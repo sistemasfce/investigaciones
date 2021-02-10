@@ -60,6 +60,13 @@ class co_proyectos_inv
         return toba::db()->consultar_fila($sql);
     }   
     
+    // devuelve el numero siguiente al último proyecto creado
+    function get_siguiente_id_proyecto()
+    {
+        $sql = "SELECT proyecto + 1 as proyecto FROM proyectos_inv ORDER BY proyecto DESC LIMIT 1";
+        return toba::db()->consultar_fila($sql);
+    }
+    
     function get_programas($where='1=1')
     {
         $sql = "SELECT *,

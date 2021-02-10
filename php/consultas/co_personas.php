@@ -79,7 +79,7 @@ class co_personas
             WHERE 
                 $where
                 AND designaciones.estado in ( 1,5) 
-                AND designaciones.categoria in (1,2,3,4,5)
+                AND designaciones.categoria in (1,2,3,4,5,44)
                 AND personas_categorias_inv.resultado_categoria in ('1 (uno)','2 (dos)','3 (tres)','4 (cuatro)','5 (cinco)')
                 ORDER BY 
                 nombre_completo

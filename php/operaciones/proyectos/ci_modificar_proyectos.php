@@ -110,6 +110,7 @@ class ci_modificar_proyectos extends investigaciones_ci
     
     function evt__form__modificacion($datos)
     {
+        ei_arbol($datos);
         if (isset($datos['proyecto_archivo'])) {
             $nombre_archivo = $datos['proyecto_archivo']['name'];
             $nuevo = $datos['ciclo_lectivo'].'_'.$datos['entrada_numero'];
@@ -120,6 +121,20 @@ class ci_modificar_proyectos extends investigaciones_ci
             $datos['proyecto_path'] = $destino;   
 	}
         $this->tabla('proyectos_inv')->set($datos);
+        
+        // es proyecto, hay que ver si cargó programa
+       /* if($datos['ambito']== 8){
+            if (isset($datos['proyecto'])){
+                $aux['programa'] = $datos['proyecto'];
+                //como el proyecto todavia no existe... juego con el seq para 
+                //obtener el sig al ultimo proyecto creado
+                $aux['proyecto'] = toba::consulta_php('co_proyectos_inv')->get_siguiente_id_proyecto();
+                $aux['apex_ei_analisis_fila'] = 'A';
+                $proyecto_en_programa[] = $aux;
+                $this->tabla('proyectos_inv_en_programas')->procesar_filas($proyecto_en_programa);
+            }
+        }
+        */
         foreach ($datos['alcance'] as $alc) {
             $aux['alcance'] = $alc;
             $aux['apex_ei_analisis_fila'] = 'A';
@@ -137,7 +152,7 @@ class ci_modificar_proyectos extends investigaciones_ci
     }
     
     //-----------------------------------------------------------------------------------
-    //---- form_ml ----------------------------------------------------------------------
+    //---- form_ml ue ----------------------------------------------------------------------
     //-----------------------------------------------------------------------------------
 
     function conf__form_ml_ue(investigaciones_ei_formulario_ml $form_ml)
@@ -152,6 +167,24 @@ class ci_modificar_proyectos extends investigaciones_ci
     {
 
         $this->tabla('proyectos_inv_ue')->procesar_filas($datos);
+    }   
+    
+    //-----------------------------------------------------------------------------------
+    //---- form_ml prog ----------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------
+
+    function conf__form_ml_prog(investigaciones_ei_formulario_ml $form_ml)
+    {
+        if ($this->relacion()->esta_cargada()) {
+            $datos = $this->tabla('proyectos_inv_en_programas')->get_filas();
+            $form_ml->set_datos($datos);
+        }
+    }
+    
+    function evt__form_ml_prog__modificacion($datos)
+    {
+
+        $this->tabla('proyectos_inv_en_programas')->procesar_filas($datos);
     }   
 
     function evt__procesar()

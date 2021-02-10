@@ -35,6 +35,20 @@ class ci_cargar_proyectos_pi extends investigaciones_ci
 	}
         $datos['estado'] = 23;  // aceptado
         $this->tabla('proyectos_inv')->set($datos);
+        
+        // es proyecto, hay que ver si cargó programa
+        if($datos['ambito']== 8){
+            if (isset($datos['proyecto'])){
+                $aux['programa'] = $datos['proyecto'];
+                //como el proyecto todavia no existe... juego con el seq para 
+                //obtener el sig al ultimo proyecto creado
+                $aux['proyecto'] = toba::consulta_php('co_proyectos_inv')->get_siguiente_id_proyecto();
+                $aux['apex_ei_analisis_fila'] = 'A';
+                $proyecto_en_programa[] = $aux;
+                $this->tabla('proyectos_inv_en_programas')->procesar_filas($proyecto_en_programa);
+            }
+        }
+        
         foreach ($datos['alcance'] as $alc) {
             $aux['alcance'] = $alc;
             $aux['apex_ei_analisis_fila'] = 'A';
@@ -76,7 +90,7 @@ class ci_cargar_proyectos_pi extends investigaciones_ci
     function conf__form_ml_prog(investigaciones_ei_formulario_ml $form_ml)
     {
         if ($this->relacion()->esta_cargada()) {
-            $datos = $this->tabla('proyectos_inv_prog')->get_filas();
+            $datos = $this->tabla('proyectos_inv_en_programas')->get_filas();
             $form_ml->set_datos($datos);
         }
     }
@@ -84,7 +98,7 @@ class ci_cargar_proyectos_pi extends investigaciones_ci
     function evt__form_ml_prog__modificacion($datos)
     {
 
-        $this->tabla('proyectos_inv_prog')->procesar_filas($datos);
+        $this->tabla('proyectos_inv_en_programas')->procesar_filas($datos);
     }   
 
     function evt__procesar()
